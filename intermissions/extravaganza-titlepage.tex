@@ -1,0 +1,47 @@
+\documentclass[
+aspectratio=169
+]{beamer}
+
+\usepackage[osf]{AlegreyaSans}
+\usepackage{tikz}
+\usepackage{tikzlings,tikzducks}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight,width=\paperwidth]{extravaganza-intermission-background}}
+
+\setbeamersize{text margin left=0pt,text margin right=0pt}
+
+\makeatletter
+\def\battext{bat}
+\def\myscale{0.275}
+\newcommand{\inserttikzlings}{
+  \begin{tikzpicture}[scale=\myscale]
+    \duck
+  \end{tikzpicture}\hfill
+  \foreach \x in \tikzlings@names@clist {
+    \ifx\x\battext
+    \else
+      \begin{tikzpicture}[scale=\myscale]
+        \csname\x\endcsname
+      \end{tikzpicture}\hfill
+    \fi
+  }
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}[b]
+\begin{tikzpicture}[remember picture, overlay]
+
+% title
+\node[font=\bfseries\Huge\sffamily\scshape,text width=7.5cm,align=center] at (current page.center) {The \\Great \\ Tikzlings \\ Christmas \\Extravaganza \\ \the\year };
+\end{tikzpicture}
+
+\hspace*{3cm}\tikz[rotate=-20,scale=0.275]{\bat}
+
+\hfill\inserttikzlings
+
+\end{frame}
+
+\end{document}
