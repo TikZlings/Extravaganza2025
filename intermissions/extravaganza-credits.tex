@@ -20,6 +20,8 @@
   shadows
 }
 
+\usepackage[most]{tcolorbox}
+
 \usepackage{tikzducks,array}
 \usepackage{url}
 
@@ -50,33 +52,14 @@ SamCarter & Paulo Cereda  & Ulrike Fischer &  Carla Maggi   \tabularnewline
 
 Storyboard  & Assistant &Cast \tabularnewline
 \makebox[0pt][c]{Gert Fischer}      &Bär     &Loads of Tikzlings\tabularnewline
-\vspace{-\ht\strutbox}\includegraphics[width=0.8\linewidth,]{gert-avatar}
-&\vspace{-\ht\strutbox}\includegraphics[width=0.8\linewidth,]{baer}&
-\scriptsize\fontsize{8pt}{8.5pt}\selectfont\raggedright
-\vspace{-2\normalbaselineskip}
+\includegraphics[width=0.8\linewidth,]{gert-avatar}
+&\includegraphics[width=0.8\linewidth,]{baer}&
+\begin{tcolorbox}[size=fbox,fit to height=2.4cm,frame empty,interior empty]
+\raggedright
 Music, sound and lyrics by 
-Kenneth J. Alford,
-The Beatles,
-José Feliciano,
-Michael Giacchino,
-Franz Xaver Gruber,
-Georg Friedrich Händel,
-George Harrison,
-Sreeranjini Kodampally,
-Solomon Linda,
-Lowell Mason,
-The Mariachis,
-Scott McKenzie,
-Sreevalsen J. Menon,
-John Philipps,
-The Pointer Sisters,
-Meera Rammohan,
-The Tokens,
-Pjotr Iljitsch Tschaikowski,
-Nick Urata,
-Vangelis,
-Isaac Watts
+...
 and Spanac (via \url{www.freesoundslibrary.com}) % intermission jingle from https://www.freesoundslibrary.com/christmas-music-box-music/
+\end{tcolorbox}
 \end{tabular}
 \vfill\vfill
 \end{document}
