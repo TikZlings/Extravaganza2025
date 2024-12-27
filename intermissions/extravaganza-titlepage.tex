@@ -15,9 +15,7 @@ aspectratio=169
 \def\battext{bat}
 \def\myscale{0.275}
 \newcommand{\inserttikzlings}{
-  \begin{tikzpicture}[scale=\myscale]
-    \duck
-  \end{tikzpicture}\hfill
+  \pretocmd{\tikzlings@names@clist}{duck,}{}{}%
   \foreach \x in \tikzlings@names@clist {
     \ifx\x\battext
     \else
