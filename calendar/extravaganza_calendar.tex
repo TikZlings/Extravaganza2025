@@ -1,0 +1,184 @@
+% modified from https://tex.my/category/calendar/
+% many thanks to LianTze Lim for creating the template!
+\documentclass[20pt,british,giant]{cdcalendar}% https://github.com/liantze/cdcalendar
+
+\usetikzlibrary{matrix}
+\usepackage[rm,t]{roboto}
+\usepackage{graphicx}
+\usepackage{tikzlings,tikzducks}
+
+\dayHeadingStyle{font=\sffamily\color{gray!90}}
+\monthTitleStyle{font={\fontsize{48pt}{50pt}\bfseries}, red!50!RedViolet}
+\setlength{\CalPageMargin}{0.75cm}
+\sundayColor{red!60!black}
+\colorlet{titlescolour}{Emerald!30!RoyalBlue}
+\tikzset{monthTitleOptions/.append style={text=titlescolour}}
+\tikzset{every calendar/.append style={day yshift=2.25em}}
+\captionStyle{align=flush left,font={\fontsize{48pt}{50pt}\bfseries\color{red!60!black}}}
+\eventStyle{\tiny}
+
+\tikzset{
+  page/.style={}
+}
+
+\tikzset{default mark/.style={circle,inner sep=0.6em,fill=titlescolour!20}}
+
+\renewcommand{\illustration}[3][]{%
+  \clearpage
+  \tikz\node[rectangle split, rectangle split parts=2,
+    rectangle split part align={left,left},
+    text width=#2,inner xsep=0pt, inner ysep=1pt, illusCaptionOptions]
+  {#1\strut \nodepart{second}\includegraphics[width=#2]{#3}};\par
+  \vspace*{0.1cm}%
+}
+
+
+\makeatletter
+\pretocmd{\cdc@printmonthname}{\strut}{}{}
+\def\battext{bat}
+\newcommand{\inserttikzlings}{%
+  \begin{tikzpicture}[scale=1.18]
+    \duck
+  \end{tikzpicture}\hfill
+  \foreach \x in \tikzlings@names@clist {%
+    \ifx\x\battext
+    \else
+      \begin{tikzpicture}[scale=1.18]
+        \csname\x\endcsname
+      \end{tikzpicture}\hfill
+    \fi
+  }%
+}
+\makeatother
+
+\usepackage{fancyqr}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\timestamp}[1]{
+\begin{tikzpicture}[remember picture,overlay]
+\node at ([xshift=5.4cm,yshift=-2.3cm]current page.center) { \fancyqr[color=titlescolour,size=3cm,hyperlink]{https://vimeo.com/1038963018\##1}};
+\end{tikzpicture}
+}
+
+\newcommand{\nextyear}{\number\numexpr\the\year+1\relax}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.center) {\includegraphics[width=1.4\paperwidth,height=1.22\paperheight]{./extravaganza-calendar-background.pdf}};
+\node[font=\bfseries\Huge\sffamily\scshape,text width=.8\paperwidth,align=flush center] at ([yshift=4cm]current page.center) {The \\Great \\ Tikzlings \\ Calendar \\ \nextyear\relax };
+\node[text width=\paperwidth,font=\tiny,anchor=south,align=center] at (current page.south) {Whilst every care was taken to ensure the accuracy of the information, we cannot take any responsibility for  errors.};
+\bat[rotate=-30,xshift=14cm,yshift=5cm,scale=1.5]
+%\node[anchor=north west,align=center,font=\tiny,inner sep=0.75cm,white] at (current page.north west) {
+%  \fancyqr[
+%    color=white,
+%    size=3.7cm
+%  ]{https://vimeo.com/1038963018}
+%  \\ \url{vimeo.com/1038963018}
+%};
+\end{tikzpicture}
+\mbox{}\vfill
+
+\begin{minipage}{\linewidth}
+\setlength{\baselineskip}{3.1cm}
+\centering
+\inserttikzlings\par
+\end{minipage}
+\vspace{0.15cm}\mbox
+
+\illustration[Mariachi Marmots]{\textwidth,page=14}{../carla/mariachi/mariachi}
+\begin{monthCalendar}{2025}{01}
+\event{2025-01-10}{}{Birthday Donald Knuth}
+\event{2025-01-13}{}{National Rubber Duck Day}
+\end{monthCalendar}
+\timestamp{t=1m23s}
+
+\illustration[Abbey Road 2.0]{\textwidth,page=300}{../samcarter/abbeyroad/abbeyroad}
+\begin{monthCalendar}{\nextyear}{02}
+%\event{2025-02-01}{}{TeXLive'25 test build start}
+\event{2025-02-02}{}{Groundhog Day}
+\event{2025-02-06}{}{GUTenberg: Exposé sur le thème beamer Gotham}
+\event{2025-02-08}{}{TeXLive'25 pretest start}
+\event{2025-02-16}{}{Birthday Island of \TeX}
+\event{2025-02-22}{}{TeXLive'25 code freeze}
+\end{monthCalendar}
+\timestamp{t=3m52s}
+
+\illustration[White Water Fun]{\textwidth,page=136}{../samcarter/whitewaterride/whitewaterride}
+\begin{monthCalendar}{\nextyear}{03}
+\event{2025-03-01}{}{TUG election, nominations due}
+\event{2025-03-01}{}{TeXLive'25 final updates from CTAN}
+\event{2025-03-01}{}{Saint David‘s Day}
+\event{2025-03-08}{}{TeXLive'25 release}
+\event{2025-03-21}{}{TUGboat 46:1 submission deadline}
+\end{monthCalendar}
+\timestamp{t=4m22s}
+
+\illustration[BatBär]{\textwidth,page=500}{../samcarter/batbear/batbear}
+\begin{monthCalendar}{\nextyear}{04}
+\event{2025-04-03}{2025-04-05}{Dante'25 (Darmstadt, Germany)}
+\event{2025-04-29}{2025-05-04}{BachoTEX'25 (Bachotek, Poland)}
+\end{monthCalendar}
+\timestamp{t=3m25s}
+
+\illustration[Meanwhile in Africa...]{\textwidth,page=310}{../samcarter/lion/lion}
+\begin{monthCalendar}{\nextyear}{05}
+\event{2025-04-29}{2025-05-04}{BachoTEX'25 (Bachotek, Poland)}
+\event{2025-05-25}{}{Towel Day}
+\end{monthCalendar}
+\timestamp{t=4m42s}
+
+\illustration[Flower Power]{\textwidth,page=1}{../samcarter/flowerpower/flowerpower}
+\begin{monthCalendar}{\nextyear}{06}
+\event{2025-06-01}{}{\LaTeX\ release}
+\event{2025-06-02}{}{Festa della Repubblica (Italy)}
+\event{2025-06-09}{}{Birthday Donald Duck}
+\event{2025-06-23}{}{National Typewriter Day}
+\end{monthCalendar}
+\timestamp{t=0m55s}
+
+\illustration[TUG'25]{\textwidth,page=400}{../ulrike/india/india}
+\begin{monthCalendar}{\nextyear}{07}
+\event{2025-07-18}{}{Dies ater}
+\event{2025-07-18}{2025-07-20}{TUG'25 (Trivandrum, India)}
+\event{2025-07-27}{}{TUGboat 46:2 submission deadline}
+\end{monthCalendar}
+\timestamp{t=2m53s}
+
+\illustration[Tagging the World]{\textwidth,page=25}{../ulrike/tagging-factory/tagging-factory}
+\begin{monthCalendar}{\nextyear}{08}
+\event{2025-08-15}{}{Ferragosto}
+\event{2025-08-20}{}{International Hawaiian Pizza Day}
+\event{2025-08-22}{2025-08-29}{ConTEXt Meeting (Chmielno, Poland)}
+\end{monthCalendar}
+\timestamp{t=2m29s}
+
+\illustration[Unstoppable]{\textwidth,page=1}{../samcarter/unstoppable/unstoppable}
+\begin{monthCalendar}{\nextyear}{09}
+\event{2025-09-03}{2025-09-05}{DocEng (Nottingham, UK)}
+\event{2025-09-19}{}{Talk Like a Pirate Day}
+\end{monthCalendar}
+\timestamp{t=0m26s}
+
+\illustration[Exciting Times]{\textwidth,page=1}{../carla/halloween/ExcitingTimesHalloween.pdf}
+\begin{monthCalendar}{\nextyear}{10}
+\event{2025-10-16}{}{Global Cat Day}
+\event{2025-10-25}{}{Saint Crispin's Day}
+\end{monthCalendar}
+\timestamp{t=0m10s}
+
+\illustration[Paddington]{\textwidth,page=1}{../samcarter/paddington/paddington}
+\begin{monthCalendar}{\nextyear}{11}
+\event{2025-11-01}{}{\LaTeX\ release}
+\event{2025-11-07}{}{Hug a Bear Day}
+\end{monthCalendar}
+\timestamp{t=1m48s}
+
+\illustration[Grand Finale]{\textwidth,page=555}{../ulrike/finale/finale}
+\begin{monthCalendar}{\nextyear}{12}
+\event{2025-12-08}{}{Pretend To Be A Time Traveler Day}
+\event{2025-12-20}{}{TikZlings Extravaganza 2025 release}
+\end{monthCalendar}
+\timestamp{t=5m47s}
+
+\end{document}
