@@ -1,8 +1,6 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \setbeamertemplate{navigation symbols}{}
-
-\usepackage{graphicx}
 
 \usepackage{tikz}
 \usetikzlibrary{fpu}
@@ -27,7 +25,7 @@
             \pgfmathsetmacro{\startx}{\n * \parabolawidth}
             \pgfmathsetmacro{\endx}{(\n + 1) * \parabolawidth}
 
-            \draw[domain=\startx:\endx, samples=50, draw=none] 
+            \draw[domain=\startx:\endx, samples=50, draw=none]
                 plot (\x, {\a * (\x - \h)^2 + \k});
         }
 
