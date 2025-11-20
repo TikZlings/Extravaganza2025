@@ -27,10 +27,14 @@
     \node at ([yshift=0.8cm]current page.center) {\includegraphics[width=\paperwidth]{wheel-fruit-round-pile-pattern-shop-food-produce-pumpkin-market-stack-yellow-baking-eat-bakery-circle-cheese-holland-netherlands-circular-dutch-layers-dairy-oval-cheesy-1257616_fg}};
 
     \node[rotate=-5*sin(5*\thepage),anchor=south] at (3,-3) {
-      \ifnum \intmodnn{\thepage}{20} > 10
+      \ifnum\thepage>400
         \includegraphics{Passepartout_close}
       \else
-        \includegraphics{Passepartout_open}
+        \ifnum \intmodnn{\thepage}{20} > 10
+          \includegraphics{Passepartout_close}
+        \else
+          \includegraphics{Passepartout_open}
+        \fi
       \fi
     };
 
