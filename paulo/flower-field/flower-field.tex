@@ -1,0 +1,78 @@
+\documentclass{beamer}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{fpu}
+\usetikzlibrary{tikzlings}
+
+\NewDocumentEnvironment{scene}{m+b}{\pgfmathparse{ceil(25 * #1)}%
+\foreach\x in {1,..., \pgfmathresult}{\begin{frame}
+#2
+\end{frame}}}{}{}
+
+\newcommand{\drawMultipleHops}[2]{%
+    \begin{tikzpicture}[scale=1.2]
+        \path (-0.5,1.5) rectangle (11.5,4);
+        \def\totalwidth{10}
+        \def\segments{#2}
+        \pgfmathsetmacro{\parabolawidth}{\totalwidth / \segments}
+
+        \foreach \n in {0,...,#2} {
+            \pgfmathsetmacro{\a}{-1}
+            \pgfmathsetmacro{\h}{\n * \parabolawidth + 0.5 * \parabolawidth}
+            \pgfmathsetmacro{\k}{2}
+            \pgfmathsetmacro{\startx}{\n * \parabolawidth}
+            \pgfmathsetmacro{\endx}{(\n + 1) * \parabolawidth}
+
+            \draw[domain=\startx:\endx, samples=50, draw=none] 
+                plot (\x, {\a * (\x - \h)^2 + \k});
+        }
+
+        \pgfmathsetmacro{\xpos}{#1}
+        \pgfmathsetmacro{\nparabola}{floor(#1 / \parabolawidth)}
+        \pgfmathsetmacro{\hcurrent}{\nparabola * \parabolawidth + 0.5 * \parabolawidth}
+        \pgfmathsetmacro{\ypos}{-1 * (#1 - \hcurrent)^2 + 2}
+        \path (\xpos, \ypos) pic{anteater};
+    \end{tikzpicture}%
+}
+
+% https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{beautiful-spring-landscape-with-blooming-flowers-reduced.jpg}}
+
+\begin{document}
+
+\def\npages{20}
+\def\nparabolas{10}
+
+\foreach \i in {1, ..., \npages} {
+\begin{scene}{0.2}
+  \pgfmathsetmacro{\anteaterposition}{\i * (10 / \npages)}
+  \drawMultipleHops{\anteaterposition}{\nparabolas}
+\end{scene}
+}
+
+\foreach \i in {\npages, ..., 1} {
+\begin{scene}{0.2}
+  \pgfmathsetmacro{\anteaterposition}{\i * (10 / \npages)}
+  \drawMultipleHops{\anteaterposition}{\nparabolas}
+\end{scene}
+}
+
+\foreach \i in {1, ..., \npages} {
+\begin{scene}{0.2}
+  \pgfmathsetmacro{\anteaterposition}{\i * (10 / \npages)}
+  \drawMultipleHops{\anteaterposition}{\nparabolas}
+\end{scene}
+}
+
+\foreach \i in {\npages, ..., 1} {
+\begin{scene}{0.2}
+  \pgfmathsetmacro{\anteaterposition}{\i * (10 / \npages)}
+  \drawMultipleHops{\anteaterposition}{\nparabolas}
+\end{scene}
+}
+
+\end{document}
