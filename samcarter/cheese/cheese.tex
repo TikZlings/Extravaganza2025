@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+\setbeamertemplate{navigation symbols}{}
+\graphicspath{{include/}}
+
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+\begin{document}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \node at ([yshift=0.8cm]current page.center) {\includegraphics[width=\paperwidth]{wheel-fruit-round-pile-pattern-shop-food-produce-pumpkin-market-stack-yellow-baking-eat-bakery-circle-cheese-holland-netherlands-circular-dutch-layers-dairy-oval-cheesy-1257616_bg}};
+
+    \begin{scope}[xshift=9.5cm,yshift=-6.75cm]
+      \ifnum\thepage>400
+        \cat[scale=2,body=black,whiskers=black,nose=black,eyes=green!20!yellow]
+      \else
+        \cat[scale=2,body=black,whiskers=black,nose=black,eyes=black]
+      \fi
+    \end{scope}
+
+    \node at ([yshift=0.8cm]current page.center) {\includegraphics[width=\paperwidth]{wheel-fruit-round-pile-pattern-shop-food-produce-pumpkin-market-stack-yellow-baking-eat-bakery-circle-cheese-holland-netherlands-circular-dutch-layers-dairy-oval-cheesy-1257616_fg}};
+
+    \node[rotate=-5*sin(5*\thepage),anchor=south] at (3,-3) {
+      \ifnum \intmodnn{\thepage}{20} > 10
+        \includegraphics{Passepartout_close}
+      \else
+        \includegraphics{Passepartout_open}
+      \fi
+    };
+
+    % credit for background image
+    \node[text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://pxhere.com/en/photo/1257616}};
+
+  \end{tikzpicture}
+  \pause[500]
+\end{frame}
+
+\end{document}
