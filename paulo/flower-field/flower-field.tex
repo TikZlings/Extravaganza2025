@@ -9,6 +9,10 @@
 \NewDocumentEnvironment{scene}{m+b}{\pgfmathparse{ceil(25 * #1)}%
 \foreach\x in {1,..., \pgfmathresult}{\begin{frame}
 #2
+\begin{tikzpicture}[remember picture,overlay]
+  % credit for background image
+  \node[text width=\paperwidth,font=\tiny,align=center,color=white] at ([yshift=0.35cm]current page.south) {Image source: \url{https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm}};
+\end{tikzpicture}
 \end{frame}}}{}{}
 
 \newcommand{\drawMultipleHops}[2]{%
