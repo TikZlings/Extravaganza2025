@@ -47,10 +47,10 @@
 ## 8. National Hockey League
 * 0:05 - 0:25
 * Schneewalzer
-﻿* https://youtu.be/r4ugf3FTCj4
+* https://youtu.be/r4ugf3FTCj4
   
 ## 9. Grand Finale
-* ﻿0:45 - 1:05
+* 0:45 - 1:05
 * Song of Joy 
 * Miguel Rios
 * https://www.youtube.com/watch?v=D2MqD3FEjcs
@@ -62,7 +62,7 @@
 * https://www.youtube.com/watch?v=IaeVqF05nTg
 
 ## 11. Lumberjack
-* ﻿0:24 - 0:43
+* 0:24 - 0:43
 * Lumberjack Song
 * Monty Python
 * https://www.youtube.com/watch?v=FshU58nI0Ts
