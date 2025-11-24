@@ -1,0 +1,63 @@
+\documentclass[border=1pt,tikz]{standalone}
+\usepackage{tikzlings}
+
+\tikzset{
+    pics/myumbrella/.style args={#1/#2/#3/#4}{
+      code = {
+        \draw[gray, very thick, rounded corners] (-.27,.14) -- (0,0) -- (0,2.5);
+				\draw[gray,fill=#1](0,2.3) to[bend right=60] (-1,1.5) to[bend left=60] (-.5,1.5) to[bend left=60] cycle;
+  			\draw[gray,fill=#2](0,2.3) to[bend right=60] (-.5,1.5) to[bend left=60] (0,1.5) -- cycle;
+    		\draw[gray,fill=#3](0,2.3) -- (0,1.5) to[bend left=60] (.5,1.5) to[bend right=60] cycle;
+  			\draw[gray,fill=#4](0,2.3) to[bend left=60] (1,1.5) to[bend right=60] (.5,1.5) to[bend right=60] cycle;
+    }}}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \meerkat
+		% Copied from samcarter's "lion" in Extravaganza 2024
+    \fill[black!90!white!50!black]  (0.154, 1.7201).. controls (0.1005, 1.5732) and (-0.1072, 1.5798) .. (-0.155, 1.7201).. 
+		  controls (-0.1351, 1.6616) and (-0.0412, 1.6415) .. (0.0, 1.6871).. controls (0.0412, 1.6415) and (0.1351, 1.6616) .. 
+			(0.154, 1.7201) -- cycle;
+  	\pic[rotate=-16] at (-.1,.4) {myumbrella=green/cyan/blue/violet};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+    \fill[black!90!white!50!black]  (0.154, 1.7201).. controls (0.1005, 1.5732) and (-0.1072, 1.5798) .. (-0.155, 1.7201).. 
+		  controls (-0.1351, 1.6616) and (-0.0412, 1.6415) .. (0.0, 1.6871).. controls (0.0412, 1.6415) and (0.1351, 1.6616) .. 
+			(0.154, 1.7201) -- cycle;
+  	\pic[rotate=-16] at (-.1,.4) {myumbrella=cyan/blue/violet/red};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+    \fill[black!90!white!50!black]  (0.154, 1.7201).. controls (0.1005, 1.5732) and (-0.1072, 1.5798) .. (-0.155, 1.7201).. 
+		  controls (-0.1351, 1.6616) and (-0.0412, 1.6415) .. (0.0, 1.6871).. controls (0.0412, 1.6415) and (0.1351, 1.6616) .. 
+			(0.154, 1.7201) -- cycle;
+  	\pic[rotate=-16] at (-.1,.4) {myumbrella=blue/violet/red/orange};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+    \fill[black!90!white!50!black]  (0.154, 1.7201).. controls (0.1005, 1.5732) and (-0.1072, 1.5798) .. (-0.155, 1.7201).. 
+		  controls (-0.1351, 1.6616) and (-0.0412, 1.6415) .. (0.0, 1.6871).. controls (0.0412, 1.6415) and (0.1351, 1.6616) .. 
+			(0.154, 1.7201) -- cycle;
+  	\pic[rotate=-16] at (-.1,.4) {myumbrella=violet/red/orange/yellow};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+		\pic[rotate=-16] at (-.1,.4) {myumbrella=red/orange/yellow/white};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+		\pic[rotate=-16] at (-.1,.4) {myumbrella=orange/yellow/white/green};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+		\pic[rotate=-16] at (-.1,.4) {myumbrella=yellow/white/green/cyan};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \meerkat
+		\pic[rotate=-16] at (-.1,.4) {myumbrella=white/green/cyan/blue};
+\end{tikzpicture}
+
+
+\end{document}
