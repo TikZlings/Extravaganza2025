@@ -1,0 +1,60 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+\usetikzlibrary{decorations.markings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{desert-9019840_1280}}
+\graphicspath{{include/}}
+
+% Copied from samcarter's "lion" in Extravaganza 2024
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+\newcounter{mystep}
+\newcommand{\setstep}{%
+\ifnum \intmodnn{\thepage}{8} = 1
+  \setcounter{mystep}{0}
+\fi%
+\stepcounter{mystep}%
+}
+
+% trick taken from https://topanswers.xyz/tex?q=1989
+\tikzset{
+    use page relative coordinates/.style={
+        shift={(current page.south west)},
+        x={(current page.south east)},
+        y={(current page.north west)}
+    },
+}
+
+\begin{document}
+\begin{frame}
+  \setstep
+  \begin{tikzpicture}[remember picture, overlay,
+	    decoration={
+      markings,  
+      mark=at position \thepage/500 
+			with {
+		% Copied from samcarter's "lion" in Extravaganza 2024
+				\node[rotate=-9*sin(\thepage*7), anchor=south, scale=4]
+					{\includegraphics[page=\themystep,height=1cm]{suricato}};
+				}
+			}
+		]
+
+	  \path[postaction=decorate] 
+		                  (3,-4)  to[bend right] (4, -3.5)   to[bend left] (5,-4)    to[bend left] (6, -3.5)
+			 to[bend right] (7,-4)  to[bend right] (8, -3.5)   to[bend left] (9,-4)    to[bend left] (10, -3.5)
+			 to[bend right] (11,-4) to[bend right] (12, -3.5)  to[bend left] (13,-4) ;
+														 
+    % credit for background image
+    \node[white,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south)
+      {Image source: \url{https://pixabay.com/de/photos/wüste-sand-düne-sonnenuntergang-9019840/}};
+    
+  \end{tikzpicture}
+  \pause[500]
+\end{frame}%
+\end{document}
