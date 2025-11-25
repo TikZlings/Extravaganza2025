@@ -8,8 +8,8 @@ pdftoppm -png -r 240 -progress Avignon.pdf Avignon
 # convert to video
 ffmpeg \
   -ss 00:00:00 -i Avignon-%03d.png \
-  -ss 00:00:10 -i Music.m4a \
-  -shortest Sur_le_pont_d_Avignon-Comptines_et_chansons-uJKfxtYAt0s.m4a
+  -ss 00:00:05 -i Sur_le_pont_d_Avignon-Comptines_et_chansons-uJKfxtYAt0s.m4a \
+  -shortest Avignon.mp4
 
 # repair video
 HandBrakeCLI --crop 0:0:0:0  -i Avignon_raw.mp4 -o Avignon.mp4

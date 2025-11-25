@@ -1,4 +1,5 @@
-% !TeX TS-program = lualatex -interaction=nonstopmode % | txs:///view-pdf | txs:///view-log
+% !TeX document-id = {fafd47c4-5a0b-43b5-89f5-1ea03d97df9d}
+% !TeX TS-program = latexmk -pdflua % | txs:///view-pdf | txs:///view-log
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikzlings}
@@ -6,28 +7,34 @@
 \setmonofont{Arial Unicode MS}[Scale=0.9]
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{Pont_d`Avignon}}
 \graphicspath{{include/}}
-
-% trick taken from https://topanswers.xyz/tex?q=1989
-\tikzset{
-    use page relative coordinates/.style={
-        shift={(current page.south west)},
-        x={(current page.south east)},
-        y={(current page.north west)}
-    },
-}
 
 \begin{document}
 
-\begin{frame}<1>
+\begin{frame}
   \begin{tikzpicture}[remember picture, overlay]
 
+    \node[rotate=-2.5] at ([yshift=-1.75cm]current page.center) {\includegraphics[width=1.1\paperwidth]{Pont_d`Avignon}};
+
+    \begin{scope}[xshift=sin(\thepage*2)*0.7cm]
+      \pig[scale=0.35,yshift=-5.3cm,xshift=5cm]
+      \bee[scale=0.36,yshift=-5.1cm,xshift=7.5cm]
+      \hippo[scale=0.37,yshift=-4.9cm,xshift=10cm]
+      \meerkat[scale=0.38,yshift=-4.7cm,xshift=12.5cm]
+      \owl[scale=0.39,yshift=-4.6cm,xshift=15cm]
+      \elephant[scale=0.4,yshift=-4.4cm,xshift=17.5cm]
+      \chicken[scale=0.41,yshift=-4.3cm,xshift=20cm]
+      \ape[scale=0.42,yshift=-4.2cm,xshift=22.5cm,handposition=clap]
+      \dog[scale=0.43,yshift=-4.1cm,xshift=25cm]
+      \marmot[scale=0.44,yshift=-4.1cm,xshift=27.5cm]
+      \bat[scale=0.45,yshift=-3.9cm,xshift=30cm,wings=0.5]
+    \end{scope}
+
     % credit for background image
-    \node[white,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://upload.wikimedia.org/wikipedia/commons/6/61/Pont_d`Avignon_阿微儂橋_-_panoramio.jpg}};
+    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image modified from: \url{https://upload.wikimedia.org/wikipedia/commons/6/61/Pont_d`Avignon_阿微儂橋_-_panoramio.jpg} (by lienyuan lee, CC BY 3.0)};
 
   \end{tikzpicture}
-  \pause[600]
+  \pause[450]
 \end{frame}
 
 \end{document}
