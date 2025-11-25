@@ -4,7 +4,7 @@ This repository contains the souce code of the Great TikZlings Extravanganza 202
 
 The full video is available from ...
 
-## 1. Cheese
+## Cheese
 
 <img align="right" src="./samcarter/cheese/cheese.png" height="100">
 
@@ -17,7 +17,7 @@ The full video is available from ...
   
 - Source Code: [./samcarter/cheese/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/cheese/)
 
-## 2. Flower Field
+## Flower Field
 
 <img align="right" src="./paulo/flower-field/flower-field.png" height="100">
 
@@ -29,6 +29,32 @@ The full video is available from ...
 - Image: https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
   
 - Source Code: [./paulo/flower-field/](https://github.com/TikZlings/Extravaganza2025/tree/main/paulo/flower-field/)
+
+## Mirage
+
+<img align="right" src="./carlatex/mirage/Mirage.png" height="100">
+
+- Music: Singin' in the Rain
+  Gene Kelly
+  0:22-0:40
+  https://www.youtube.com/watch?v=gAI6hhsDNxc
+  
+- Image: https://pixabay.com/de/photos/wüste-sand-düne-sonnenuntergang-9019840
+  
+- Source Code: [./carlatex/mirage/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/mirage/)
+
+## Avignon
+
+<img align="right" src="./samcarter/Avignon/Avignon.png" height="100">
+
+- Music: Sur le pont d'Avignon
+  adapted by Adolphe Adam
+  0:05-...
+  https://www.youtube.com/watch?v=uJKfxtYAt0s
+  
+- Image: https://commons.wikimedia.org/wiki/File:Pont_d`Avignon_阿微儂橋_-_panoramio.jpg
+  
+- Source Code: [./samcarter/Avignon/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/Avignon/)
 
 
  
