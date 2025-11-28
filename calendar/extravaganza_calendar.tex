@@ -37,13 +37,13 @@
 \pretocmd{\cdc@printmonthname}{\strut}{}{}
 \def\battext{bat}
 \newcommand{\inserttikzlings}{%
-  \begin{tikzpicture}[scale=1.18]
+  \begin{tikzpicture}[scale=1.1]
     \duck
   \end{tikzpicture}\hfill
   \foreach \x in \tikzlings@names@clist {%
     \ifx\x\battext
     \else
-      \begin{tikzpicture}[scale=1.18]
+      \begin{tikzpicture}[scale=1.1]
         \csname\x\endcsname
       \end{tikzpicture}\hfill
     \fi
