@@ -69,5 +69,18 @@ The full video is available from ...
   
 - Source Code: [./samcarter/dinner/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dinner/)
 
+## StormyWeather
+
+<img align="right" src="./carlatex/StormyWeather/StormyWeather.png" height="100">
+
+- Music: Walkürenritt
+  Richard Wagner
+  0:23 - 0:43
+  https://www.youtube.com/watch?v=p_MDQzyVFew
+  
+- Image: https://pixabay.com/de/photos/meer-wellen-sturm-himmel-wolken-6975501/
+  
+- Source Code: [./carlatex/StormyWeather/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/StormyWeather/)
+
 
  
