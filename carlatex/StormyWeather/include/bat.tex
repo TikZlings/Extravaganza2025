@@ -1,0 +1,33 @@
+\documentclass[border=1pt,tikz]{standalone}
+\usepackage{tikzlings}
+
+\tikzset{
+  wing/.pic={code={
+    \draw[fill=lightgray, rounded corners] (0,.5) to[bend right=10] (.3, .95) to[bend left=15] (0,.3);
+    \draw[fill=gray!50!cyan, rounded corners] (0,.4) to[bend right=10] (.45,.75) to[bend left=15] (0,.2);
+    \draw[fill=gray!70!yellow, rounded corners] (0,.3) to[bend right=10] (.5,.5) to[bend left=15] (0,.1);
+    \draw[fill=lightgray, rounded corners] (0,.2) to[bend right=10] (.47,.25) to[bend left=15] (0,0);
+  	\draw[fill=gray] (0,0) -- (-.15,.3) -- (0,.5) to[bend left] cycle;
+    \draw[fill=yellow!70!gray] (0,-.1) -- (-.07,-.1) to[bend left=15] (-.12,-.4) -- (-.07,-.55) to[bend right=15] cycle;
+		}
+	},
+  helmet/.pic={code={
+    \pic {wing};
+    \pic[xscale=-1] at (-.8,0) {wing};
+	  \draw[fill=gray] (0,0) arc(0:180:.4) -- cycle;
+		\draw[fill=cyan](-.45,.2) -- (-.35,.2) -- (-.33,.5)--(-.47,.5)-- cycle;
+    \draw[fill=yellow!70!gray](-.5,-.05) -- (-.3,-.05) -- (-.35,-.2)--(-.45,-.2)-- cycle;
+    \draw[fill=yellow!70!gray](0,-.1) -- (0,.1) -- (-.8,.1) -- (-.8,-.1) -- cycle;
+		\foreach \ind in {-.15, -.4, -.65} {
+		  \node[fill=gray, circle, inner sep=1pt] at (\ind,0) {};
+	  	}
+		}
+	},
+}
+
+\begin{document}
+\begin{tikzpicture}
+    \bat
+    \pic at (.4,1.9) {helmet};
+\end{tikzpicture}
+\end{document}
