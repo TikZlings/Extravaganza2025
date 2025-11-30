@@ -1,0 +1,64 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+\usetikzlibrary{decorations.markings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{sea-6975501_1280}}
+\graphicspath{{include/}}
+
+% trick taken from https://topanswers.xyz/tex?q=1989
+\tikzset{
+    use page relative coordinates/.style={
+        shift={(current page.south west)},
+        x={(current page.south east)},
+        y={(current page.north west)}
+    },
+    mydecoration/.style={
+        decoration={
+      markings,  
+      mark=at position \thepage/500 
+			with {
+				\node[rotate=#1]%, anchor=south, scale=4]%
+					{\includegraphics[height=1.75cm]{bat}};
+				}
+			}
+    },
+}
+
+\begin{document}
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+	  \path[mydecoration={0},postaction=decorate] (7, 2.5)
+	    to[bend right=60] (6, -1)
+	    to[bend right=60] (9, 1)
+	    to[bend right=60] (5, 1)
+	    to[bend right=60] (8, -1)
+	    to[bend right=60] cycle;
+		  								
+    \path[mydecoration={-30}, postaction=decorate] (1.25, 2)   
+      to[bend right=75] (3, 0.75) 
+      to[bend right=45] (3.25, 2) 
+      to[bend right=45] (1.5, 2.75) 
+      to[bend right]    (.5, 1.5)
+      to[bend right=15] (1.25, 0) 
+      to[bend right=15] (2, -0.5) 
+      to[bend right]    (3.75, 1.75);
+												
+		\path[mydecoration={30}, postaction=decorate] (12.75, 2) 
+		  to [bend left=75]	(11, 0.75)  
+			to [bend left=45] (10.75, 2) 
+			to [bend left=45] (12.5, 2.75) 
+			to [bend left]    (13.5, 1.5)
+			to [bend left=15] (12.75, 0) 
+			to [bend left=15] (12, -0.5) 
+			to [bend left]    (10.25, 1.75);
+                               		
+    % credit for background image
+    \node[white,text width=.7\paperwidth,font=\tiny,align=center] at (7,-4.82)
+      {Image source: \url{https://pixabay.com/de/photos/meer-wellen-sturm-himmel-wolken-6975501/}};
+
+  \end{tikzpicture}
+  \pause[500]
+\end{frame}%
+\end{document}
