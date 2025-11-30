@@ -1,0 +1,29 @@
+% !TeX document-id = {4d460a17-bbc2-464c-bfb8-e082d5147b29}
+% !TeX TS-program = latexmk -pdflua % | txs:///view-pdf | txs:///view-log
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23}}
+\graphicspath{{include/}}
+
+\begin{document}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \begin{scope}[xshift=10cm,yshift=-4cm]
+      \anteater[scale=2,chef=white]
+    \end{scope}
+
+    \node at (8,-3.5) {\includegraphics[width=3.5cm]{cauldron}};
+
+    % credit for background image
+    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23.jpg}};
+
+  \end{tikzpicture}
+%  \pause[600]
+\end{frame}
+
+\end{document}

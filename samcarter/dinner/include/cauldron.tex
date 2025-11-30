@@ -1,0 +1,28 @@
+% from https://tex.stackexchange.com/a/244378/36296
+\PassOptionsToPackage{rgb,x11names,svgnames,dvipsnames}{xcolor}
+\documentclass[tikz,border=5pt,multi]{standalone}
+\usetikzlibrary{shapes.geometric,shadows}
+\begin{document}
+  \tikzset{
+    cauldron filler/.style={draw=black, outer color=black, inner color=black!50, postaction={fill=black, fill opacity=.5}},
+    legs/.style={draw=black, fill=black, rounded corners=2pt, isosceles triangle, minimum width=.25},
+    cauldron glow/.style={circular glow={fill=#1}},
+    rim drop/.style={rim filler, postaction={fill=#1!75!black, path fading=fuzzy ring 15 percent}},
+    rim filler/.style={inner color=black!50, outer color=black, draw=black},
+    fuzzy liquid/.style={inner color=#1, outer color=#1!75!black, path fading=circle with fuzzy edge 10 percent},
+    pics/rimmed cauldron/.style n args=3{
+      code={
+        \path (-130:1.15*#1 and .8*#1) node [rotate=-130, legs] {};
+        \path (-50:1.15*#1 and .8*#1) node [rotate=-50, legs] {};
+        \path [cauldron filler] (0,0) circle (1.25*#1 and .9*#1);
+        \path [rim drop=#2] (0,0.75*#1) ++(0,-.0125*#1) ellipse (.975*#1 and 0.275*#1);
+        \path [rim filler] (0,0.75*#1) ellipse (.975*#1 and 0.255*#1);
+        \path [cauldron glow=#2] (0,.75*#1) circle (.75*#1 and .18*#1);
+        \path [fuzzy liquid=#3] (0,0.75*#1) ellipse (0.825*#1 and 0.1725*#1);
+      }
+    }
+  }
+  \begin{tikzpicture}
+    \path pic {rimmed cauldron={1}{Silver}{Turquoise}};
+  \end{tikzpicture}
+\end{document}

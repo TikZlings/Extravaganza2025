@@ -56,5 +56,18 @@ The full video is available from ...
   
 - Source Code: [./samcarter/Avignon/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/Avignon/)
 
+## Dinner
+
+<img align="right" src="./samcarter/dinner/dinner.png" height="100">
+
+- Music: My Way
+  Frank Sinatra
+  1:45-2:10
+  https://www.youtube.com/watch?v=qQzdAsjWGPg
+  
+- Image: https://commons.wikimedia.org/wiki/File:L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23.jpg
+  
+- Source Code: [./samcarter/dinner/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dinner/)
+
 
  
