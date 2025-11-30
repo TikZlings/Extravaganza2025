@@ -15,15 +15,19 @@
 
     \begin{scope}[xshift=10cm,yshift=-4cm]
       \anteater[scale=2,chef=white]
+      \fill[red!55!green!75!blue!66!white,scale=2] (-0.55,1) ellipse[x radius=0.42, y radius=0.13, rotate=70] ;
     \end{scope}
 
     \node at (8,-3.5) {\includegraphics[width=3.5cm]{cauldron}};
+
+    \draw[red!55!green!75!blue!66!white!45!white!95!orange,line width=13,line cap=round] ({8.5+0.25*sin(4*\thepage)},{-2.7+0.15*sin(4*\thepage)}) ++(0.1,0.566667) -- ({8.9},{-1.5});
+    \draw[brown,line width=4] ({8.5+0.25*sin(4*\thepage)},{-2.7+0.15*sin(4*\thepage)}) -- ++(0.3,1.7);
 
     % credit for background image
     \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23.jpg}};
 
   \end{tikzpicture}
-%  \pause[600]
+  \pause[400]
 \end{frame}
 
 \end{document}
