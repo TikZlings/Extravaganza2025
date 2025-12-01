@@ -82,5 +82,18 @@ The full video is available from ...
   
 - Source Code: [./carlatex/StormyWeather/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/StormyWeather/)
 
+## TikZlings Abbey
+
+<img align="right" src="./samcarter/TikZlingsAbbey/TikZlingsAbbey.png" height="100">
+
+- Music: Downton Abbey (Main Theme)
+  John Lunn
+  0:00-???
+  https://www.youtube.com/watch?v=j3_E9qVmrV0
+  
+- Image: https://commons.wikimedia.org/wiki/File:Highclere_Castle_-_Through_the_Trees_-_panoramio.jpg
+  
+- Source Code: [./samcarter/TikZlingsAbbey/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/TikZlingsAbbey/)
+
 
  

@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{Highclere_Castle_-_Through_the_Trees_-_panoramio}}
+\graphicspath{{include/}}
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+\begin{document}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \begin{scope}[
+      xshift=(1200.0+\thepage)*0.005cm,
+      yshift=(-700.0+\thepage)*0.01cm,
+      scale=1-0.002*\thepage
+    ]
+      \ifnum \intmodnn{\thepage}{20} > 10
+        \dog[back,tailpos=left]
+      \else
+        \dog[back,tailpos=right]
+      \fi
+      \ifnum \intmodnn{\thepage}{20} > 10
+        \coati[tophat,xshift=2.5cm,back,scale=1.5,leftstep]
+      \else
+        \coati[tophat,xshift=2.5cm,back,scale=1.5,rightstep]
+      \fi
+    \end{scope}
+
+    % credit for background image
+    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:Highclere_Castle_-_Through_the_Trees_-_panoramio.jpg}};
+
+  \end{tikzpicture}
+  \pause[400]
+\end{frame}
+
+\end{document}
