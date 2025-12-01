@@ -79,5 +79,11 @@ pdftoppm -png -r 150 -progress -singlefile extravaganza-titlepage.pdf icon_large
 
 # Converting
 repeatconvert title "./extravaganza-titlepage.pdf" 101
-convert2video example "Example"
+convert2video mirage "Mirage"
+convert2video StormyWeather "Stormy Weather"
+convert2video flower-field "Flower Field"
+convert2video Avignon "Avignon"
+convert2video cheese "Cheese"
+convert2video dinner "Dinner"
+convert2video TikZlingsAbbey "TikZlings Abbey"
 repeatconvert credits "./extravaganza-credits.pdf" 150
