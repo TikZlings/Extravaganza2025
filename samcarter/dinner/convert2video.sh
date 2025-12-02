@@ -8,7 +8,7 @@ pdftoppm -png -r 240 -progress dinner.pdf dinner
 # convert to video
 ffmpeg \
   -ss 00:00:00 -i dinner-%03d.png \
-  -ss 00:01:42 -i My_Way_2008_Remastered-Frank_Sinatra-qQzdAsjWGPg.m4a \
+  -ss 00:01:40 -i My_Way_2008_Remastered-Frank_Sinatra-qQzdAsjWGPg.m4a \
   -shortest dinner_raw.mp4
 
 # repair video
