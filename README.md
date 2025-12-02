@@ -95,5 +95,18 @@ The full video is available from ...
   
 - Source Code: [./samcarter/TikZlingsAbbey/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/TikZlingsAbbey/)
 
+## StormyWeather
+
+<img align="right" src="./carlatex/Lumberjack/Lumberjack.png" height="100">
+
+- Music: Lumberjack Song
+  Monty Python
+  0:24 - 0:43
+  https://www.youtube.com/watch?v=FshU58nI0Ts
+  
+- Image: https://pixabay.com/de/photos/mammutbaum-bäume-stämme-baumstämme-5978487/
+  
+- Source Code: [./carlatex/Lumberjack/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/Lumberjack/)
+
 
  
