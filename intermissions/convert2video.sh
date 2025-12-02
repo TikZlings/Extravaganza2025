@@ -81,9 +81,10 @@ pdftoppm -png -r 150 -progress -singlefile extravaganza-titlepage.pdf icon_large
 repeatconvert title "./extravaganza-titlepage.pdf" 101
 convert2video mirage "Mirage"
 convert2video StormyWeather "Stormy Weather"
-convert2video flower-field "Flower Field"
-convert2video Avignon "Avignon"
-convert2video cheese "Cheese"
+convert2video flower-field "Where have all the flowers gone?"
+convert2video Avignon "En vacançes"
+convert2video cheese "Sweet dreams are made of cheese"
 convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
+convert2video Lumberjack "Lumberjack"
 repeatconvert credits "./extravaganza-credits.pdf" 150
