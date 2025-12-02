@@ -4,7 +4,7 @@ This repository contains the souce code of the Great TikZlings Extravanganza 202
 
 The full video is available from ...
 
-## Cheese
+## Sweet dreams are made of cheese
 
 <img align="right" src="./samcarter/cheese/cheese.png" height="100">
 
@@ -17,7 +17,7 @@ The full video is available from ...
   
 - Source Code: [./samcarter/cheese/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/cheese/)
 
-## Flower Field
+## Where have all the flowers gone?
 
 <img align="right" src="./paulo/flower-field/flower-field.png" height="100">
 
@@ -43,7 +43,7 @@ The full video is available from ...
   
 - Source Code: [./carlatex/mirage/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/mirage/)
 
-## Avignon
+## En vacançes
 
 <img align="right" src="./samcarter/Avignon/Avignon.png" height="100">
 
