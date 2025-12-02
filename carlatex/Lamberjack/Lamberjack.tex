@@ -1,0 +1,33 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+\usetikzlibrary{decorations.markings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{sequoia-5978487_1280}}
+\graphicspath{{include/}}
+
+% trick taken from https://topanswers.xyz/tex?q=1989
+\tikzset{
+    use page relative coordinates/.style={
+        shift={(current page.south west)},
+        x={(current page.south east)},
+        y={(current page.north west)}
+    },
+}
+
+\begin{document}
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+	  % Copied from samcarter's "lion" in Extravaganza 2024
+		\node[rotate=-9*sin(\thepage*7), anchor=south] at (9.7,-4.5)
+			{\includegraphics[height=3.5cm]{marmot}};
+			                           		
+    % credit for background image
+    \node[white,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south)
+      {Image source: \url{https://pixabay.com/de/photos/mammutbaum-bäume-stämme-baumstämme-5978487/}};
+
+  \end{tikzpicture}
+  \pause[500]
+\end{frame}%
+\end{document}
