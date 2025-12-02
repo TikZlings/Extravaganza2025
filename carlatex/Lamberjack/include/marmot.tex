@@ -1,0 +1,39 @@
+\documentclass[border=1pt,tikz]{standalone}
+\usepackage{tikzlings}
+
+\tikzset{
+  shirt/.pic={code={
+    \clip(0.59, .8) to[bend left=5] (0.6, 0) -- (-0.6, 0) to[bend left=5] 
+		  (-0.59, .8) -- (-.2,.8) -- (0.0, .6) -- (.2,.8) -- cycle;
+    \filldraw[red!70!gray](0.59, .8) to[bend left=5] (0.6, 0) -- (-0.6, 0) 
+		  to[bend left=5] (-0.59, .8) -- (-.2,.8) -- (0.0, .6) -- (.2,.8) -- cycle;
+    \foreach \myy in {0, .2,...,.9}{
+      \draw[yellow,opacity=.5, line width=.1] (-.7,\myy) -- ++(1.4,0);
+      \draw[gray,opacity=.5, line width=3] (-.7,\myy) -- ++(1.4,0);
+      }
+    \foreach \myx in {-.7,-.5,...,.7}{
+      \draw[yellow,opacity=.5, line width=.1] (\myx,-.1) -- ++(0,1);  
+      \draw[gray,opacity=.5, line width=3] (\myx,-.1) -- ++(0,1);
+      }
+    }
+  },
+  ax/.pic={code={
+	  \draw[very thin,brown!70!black,fill=brown!90!white] (0,0) to[bend right] 
+      (.2,0) -- (.2,1.9) to[bend right] (0,1.9) -- cycle;
+		\draw[very thin,black!90!white, fill=gray] (-.1,1.8) -- (.3,1.8) -- 
+		  (.6,1.85) to[bend left] (.6,1.25) -- (.3,1.3) -- (-.1,1.3) -- cycle;
+		\draw[very thin,black!90!white, fill=lightgray] (.6,1.85) to[bend left] 
+		  (.6,1.25) -- (.45,1.275) to[bend right] (.45,1.825)-- cycle;
+		}
+	},
+}
+
+\begin{document}
+\begin{tikzpicture}
+  \AddToHook{tikzlings/marmot/belly}{%
+    \pic at (0,.5) {shirt};
+    }
+  \marmot
+  \pic[rotate=-30] at(0,.7) {ax};
+\end{tikzpicture}
+\end{document}
