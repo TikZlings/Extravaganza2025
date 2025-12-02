@@ -2,7 +2,7 @@
 rm flower-field.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 flower-field.pdf flower-field
+pdftoppm -png -r 48 -progress -singlefile -f 49 flower-field.pdf flower-field
 pdftoppm -png -r 240 -progress flower-field.pdf flower-field
 
 # convert to video

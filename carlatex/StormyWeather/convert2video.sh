@@ -2,7 +2,7 @@
 rm StormyWeather.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 StormyWeather.pdf StormyWeather
+pdftoppm -png -r 48 -progress -singlefile -f 173 StormyWeather.pdf StormyWeather
 pdftoppm -png -r 240 -progress StormyWeather.pdf StormyWeather
 
 # convert to video

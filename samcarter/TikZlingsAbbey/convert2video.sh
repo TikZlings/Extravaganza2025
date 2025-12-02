@@ -2,7 +2,7 @@
 rm TikZlingsAbbey.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 TikZlingsAbbey.pdf TikZlingsAbbey
+pdftoppm -png -r 48 -progress -singlefile -f 253 TikZlingsAbbey.pdf TikZlingsAbbey
 pdftoppm -png -r 240 -progress TikZlingsAbbey.pdf TikZlingsAbbey
 
 # convert to video

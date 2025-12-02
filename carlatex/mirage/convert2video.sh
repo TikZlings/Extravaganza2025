@@ -2,7 +2,7 @@
 rm Mirage.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 Mirage.pdf Mirage
+pdftoppm -png -r 48 -progress -singlefile -f 265 Mirage.pdf Mirage
 pdftoppm -png -r 240 -progress Mirage.pdf Mirage
 
 # convert to video
