@@ -13,7 +13,7 @@ width=\paperwidth]{starsky-dark}}
 \newcommand\tikzlingfirework[3]{%#1 tikzling, #2 x faktor, #3 y factor
    \foreach \radius in {4,...,16}
      {%
-         \begin{tikzpicture}[]
+        \begin{tikzpicture}[]
         \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
          % fireworks
          \pgfmathparse{100-(\radius-1)*10}%;
@@ -21,8 +21,30 @@ width=\paperwidth]{starsky-dark}}
          \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius ex);
          \end{scope}
         \end{tikzpicture}
+        \newpage
+        \begin{tikzpicture}[]
+        \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
+         % fireworks
+         \pgfmathparse{100-(\radius-1)*10}%;
+         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]    
+         \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius.5 ex);
+         \end{scope}
+        \end{tikzpicture}
         \newpage}}
 
+\newcommand\simpletikzlingfirework[3]{%#1 tikzling, #2 x faktor, #3 y factor
+   \foreach \radius in {4,...,16}
+     {%
+        \begin{tikzpicture}[]
+        \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
+         % fireworks
+         \pgfmathparse{100-(\radius-1)*10}%;
+         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]    
+         \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius ex);
+         \end{scope}
+        \end{tikzpicture}
+        \newpage
+     }}
 \begin{document}
 \mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage
 \mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage
@@ -30,17 +52,20 @@ width=\paperwidth]{starsky-dark}}
 \ExplSyntaxOn
 \tikzlingfirework{duck}{5}{5}
 \clist_map_inline:Nn\g__tikzlings_names_clist
- {
+ { %\tl_show:n{#1}
    %\sys_gset_rand_seed:n{42}
    \tl_set:Ne\l_tmpa_tl{\int_rand:nn{2}{8}}
    \tl_set:Ne\l_tmpb_tl{\int_rand:nn{2}{8}}
    \tl_if_eq:nnTF{#1}{chicken}
      {
-       \tikzlingfirework{chicken}{3}{4}
+       \simpletikzlingfirework{chicken}{3}{4}
      }
      {
        \tikzlingfirework{#1}{\l_tmpa_tl}{\l_tmpa_tl}
      }  
  }
 \ExplSyntaxOff
+
+\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage
+\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage\mbox{}\newpage
 \end{document}
