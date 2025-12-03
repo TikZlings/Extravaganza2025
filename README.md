@@ -95,7 +95,7 @@ The full video is available from ...
   
 - Source Code: [./samcarter/TikZlingsAbbey/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/TikZlingsAbbey/)
 
-## StormyWeather
+## Stormy Weather
 
 <img align="right" src="./carlatex/Lumberjack/Lumberjack.png" height="100">
 
@@ -119,4 +119,15 @@ The full video is available from ...
   
 - Source Code: [./ulrike/finale/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/finale/)
 
- 
+ ## All the world's a stage
+
+<img align="right" src="./samcarter/globe/globe.png" height="100">
+
+- Sound: "As You Like It" by William Shakespeare
+  Read by Benedict Cumberbatch
+  0:00-???
+  https://www.youtube.com/watch?v=0178jo7Mka0
+  
+- Image: https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg
+  
+- Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)

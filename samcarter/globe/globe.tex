@@ -1,0 +1,38 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{Shakespeare's_Globe_(39593782581)}}
+\graphicspath{{include/}}
+
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+
+\begin{document}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    % closed
+    \node<1-77,105-130,181-205,257-280,404-450> at (7,-2.5) {\includegraphics[scale=0.4]{Shakespeare_closed}};
+
+    % open
+    \node<78-104,131-180,206-256,281-403> at (7,-2.5) {%
+      \ifnum \intmodnn{\thepage}{20} > 15
+        \includegraphics[scale=0.4]{Shakespeare_closed}%
+      \else
+        \includegraphics[scale=0.4]{Shakespeare_open}%
+      \fi
+    };
+
+    % credit for background image
+    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg}};
+
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}

@@ -88,4 +88,5 @@ convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
 convert2video Lumberjack "Lumberjack"
 convert2video finale "Finale"
+convert2video globe "All the world's a stage"
 repeatconvert credits "./extravaganza-credits.pdf" 150
