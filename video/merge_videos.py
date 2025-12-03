@@ -29,8 +29,8 @@ video_clips = [
   VideoFileClip("../samcarter/dinner/dinner.mp4"),  
   VideoFileClip("../intermissions/TikZlingsAbbey.mp4"),
   VideoFileClip("../samcarter/TikZlingsAbbey/TikZlingsAbbey.mp4"),         
-  # VideoFileClip("../intermissions/finale.mp4"),
-  # VideoFileClip("../ulrike/finale/finale.mp4"),  
+  VideoFileClip("../intermissions/finale.mp4"),
+  VideoFileClip("../ulrike/finale/finale.mp4"),  
   VideoFileClip("../intermissions/credits.mp4"),
 ]
 

@@ -87,4 +87,5 @@ convert2video cheese "Sweet dreams are made of cheese"
 convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
 convert2video Lumberjack "Lumberjack"
+convert2video finale "Finale"
 repeatconvert credits "./extravaganza-credits.pdf" 150

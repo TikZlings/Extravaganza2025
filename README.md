@@ -108,5 +108,15 @@ The full video is available from ...
   
 - Source Code: [./carlatex/Lumberjack/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/Lumberjack/)
 
+## Finale
+
+<img align="right" src="./ulrike/finale/finale.png" height="100">
+
+- Music: Song of Joy 
+  Miguel Rios
+  0:45 - 1:05
+  https://www.youtube.com/watch?v=D2MqD3FEjcs
+  
+- Source Code: [./ulrike/finale/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/finale/)
 
  
