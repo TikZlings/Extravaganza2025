@@ -1,0 +1,68 @@
+% from https://tex.stackexchange.com/a/587166/36296
+\documentclass[border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shadings}
+
+\definecolor{pylight}{RGB}{247, 235, 205}
+\definecolor{py}{RGB}{243, 224, 181}
+\definecolor{pydark}{RGB}{221, 182, 110}
+\definecolor{pyhighlight}{RGB}{254, 235, 204}
+
+\pgfdeclareverticalshading{parchment}{100bp}{%
+  color(0bp)=(pydark);
+  color(25bp)=(pydark);
+  color(30bp)=(py);
+  color(50bp)=(pylight);
+  color(70bp)=(py);
+  color(75bp)=(pydark);
+  color(100bp)=(pydark)%
+}
+\pgfdeclareradialshading{rparchment}{\pgfpoint{0cm}{0cm}}{%
+  color(0bp)=(pylight);
+  color(13bp)=(pylight);
+  color(20bp)=(py);
+  color(40bp)=(pydark);
+  color(60bp)=(pydark!50!black);
+  color(100bp)=(black)%
+}
+\tikzset{
+  pencildraw/.style={%
+    decorate,  decoration={%
+      random steps, segment length=1.1ex, amplitude=.5ex%
+    }
+  },
+  drop shadow/.style={
+    blur shadow={%
+      shadow xshift=.5pt,
+      shadow yshift=-.5pt,
+      shadow blur steps=9,
+      shadow blur extra rounding=1.5pt%
+    },
+  },
+  parchment fill/.style={
+    pencildraw, fill=pyhighlight,
+    postaction={shading=parchment, opacity=1},
+    postaction={shading=rparchment, opacity=.7}
+  }
+}
+
+\usepackage{tgchorus}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+  \shade node[parchment fill, drop shadow,
+  inner sep=1cm, inner ysep=2.5cm,align=center]
+  (test) {
+    Dante Meeting\\
+    March 11--14, 2026\\
+    Lahnau, Germany\\
+  };
+\end{tikzpicture}
+
+\end{document}

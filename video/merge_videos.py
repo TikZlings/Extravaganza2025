@@ -31,6 +31,8 @@ video_clips = [
   VideoFileClip("../samcarter/TikZlingsAbbey/TikZlingsAbbey.mp4"),
   VideoFileClip("../intermissions/globe.mp4"),
   VideoFileClip("../samcarter/globe/globe.mp4"),
+  VideoFileClip("../intermissions/dante.mp4"),
+  VideoFileClip("../samcarter/dante/dante.mp4"),
   VideoFileClip("../intermissions/finale.mp4"),
   VideoFileClip("../ulrike/finale/finale.mp4"),
   VideoFileClip("../intermissions/credits.mp4"),

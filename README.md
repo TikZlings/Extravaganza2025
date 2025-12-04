@@ -131,3 +131,16 @@ The full video is available from ...
 - Image: https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg
   
 - Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)
+
+## The Divine Comedy
+
+<img align="right" src="./samcarter/dante/dante.png" height="100">
+
+- Sound: Basse danse La Magdalena
+  Pierre Attaingnant
+  0:40-???
+  https://www.youtube.com/watch?v=UF1MwE7Knfs
+  
+- Image: https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg
+  
+- Source Code: [./samcarter/dante/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dante/)
