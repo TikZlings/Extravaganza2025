@@ -4,20 +4,22 @@ This repository contains the souce code of the Great TikZlings Extravanganza 202
 
 The full video is available from ...
 
-## Sweet dreams are made of cheese
+## Prologue
 
-<img align="right" src="./samcarter/cheese/cheese.png" height="100">
+<img align="right" src="./samcarter/globe/globe.png" height="100">
 
-- Music: Sweet dreams (Are made of this)
-  Eurythmics
-  0:50-1:10
-  https://www.youtube.com/watch?v=IRr_CfNbBpA
+- Sound: "As You Like It" by William Shakespeare
+  Read by Benedict Cumberbatch
+  0:00-???
+  https://www.youtube.com/watch?v=0178jo7Mka0
   
-- Image: https://pxhere.com/en/photo/1257616
+- Image: https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg
   
-- Source Code: [./samcarter/cheese/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/cheese/)
+- Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)
 
-## Where have all the flowers gone?
+## Silent Beach
+
+## A Nature Lover
 
 <img align="right" src="./paulo/flower-field/flower-field.png" height="100">
 
@@ -30,7 +32,35 @@ The full video is available from ...
   
 - Source Code: [./paulo/flower-field/](https://github.com/TikZlings/Extravaganza2025/tree/main/paulo/flower-field/)
 
-## Mirage
+## Stormy Weather
+
+<img align="right" src="./carlatex/StormyWeather/StormyWeather.png" height="100">
+
+- Music: Walkürenritt
+  Richard Wagner
+  0:23 - 0:43
+  https://www.youtube.com/watch?v=p_MDQzyVFew
+  
+- Image: https://pixabay.com/de/photos/meer-wellen-sturm-himmel-wolken-6975501/
+  
+- Source Code: [./carlatex/StormyWeather/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/StormyWeather/)
+
+## Lumberjack
+
+<img align="right" src="./carlatex/Lumberjack/Lumberjack.png" height="100">
+
+- Music: Lumberjack Song
+  Monty Python
+  0:24 - 0:43
+  https://www.youtube.com/watch?v=FshU58nI0Ts
+  
+- Image: https://pixabay.com/de/photos/mammutbaum-bäume-stämme-baumstämme-5978487/
+  
+- Source Code: [./carlatex/Lumberjack/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/Lumberjack/)
+
+## Commercial Break
+
+## A Mirage
 
 <img align="right" src="./carlatex/mirage/Mirage.png" height="100">
 
@@ -42,6 +72,30 @@ The full video is available from ...
 - Image: https://pixabay.com/de/photos/wüste-sand-düne-sonnenuntergang-9019840
   
 - Source Code: [./carlatex/mirage/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/mirage/)
+
+## Happy Christmas
+
+<img align="right" src="./carlatex/HappyChristmas/HappyChristmas.png" height="100">
+
+- Music: Baby Elephant Walk
+  Henry Mancini & His Orchestra
+  0:18 - 0:40
+  https://www.youtube.com/watch?v=EbI2nl3Duf8
+
+- Source Code: [./carlatex/HappyChristmas/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/HappyChristmas/)
+
+## Sweet dreams are made of cheese
+
+<img align="right" src="./samcarter/cheese/cheese.png" height="100">
+
+- Music: Sweet dreams (Are made of this)
+  Eurythmics
+  0:50-1:10
+  https://www.youtube.com/watch?v=IRr_CfNbBpA
+  
+- Image: https://pxhere.com/en/photo/1257616
+  
+- Source Code: [./samcarter/cheese/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/cheese/)
 
 ## En vacançes
 
@@ -56,6 +110,19 @@ The full video is available from ...
   
 - Source Code: [./samcarter/Avignon/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/Avignon/)
 
+## Commercial Break
+
+<img align="right" src="./samcarter/dante/dante.png" height="100">
+
+- Sound: Basse danse La Magdalena
+  Pierre Attaingnant
+  0:40-???
+  https://www.youtube.com/watch?v=UF1MwE7Knfs
+  
+- Image: https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg
+  
+- Source Code: [./samcarter/dante/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dante/)
+
 ## Dinner
 
 <img align="right" src="./samcarter/dinner/dinner.png" height="100">
@@ -68,19 +135,6 @@ The full video is available from ...
 - Image: https://commons.wikimedia.org/wiki/File:L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23.jpg
   
 - Source Code: [./samcarter/dinner/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dinner/)
-
-## StormyWeather
-
-<img align="right" src="./carlatex/StormyWeather/StormyWeather.png" height="100">
-
-- Music: Walkürenritt
-  Richard Wagner
-  0:23 - 0:43
-  https://www.youtube.com/watch?v=p_MDQzyVFew
-  
-- Image: https://pixabay.com/de/photos/meer-wellen-sturm-himmel-wolken-6975501/
-  
-- Source Code: [./carlatex/StormyWeather/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/StormyWeather/)
 
 ## TikZlings Abbey
 
@@ -95,20 +149,9 @@ The full video is available from ...
   
 - Source Code: [./samcarter/TikZlingsAbbey/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/TikZlingsAbbey/)
 
-## Stormy Weather
+## Hockey
 
-<img align="right" src="./carlatex/Lumberjack/Lumberjack.png" height="100">
-
-- Music: Lumberjack Song
-  Monty Python
-  0:24 - 0:43
-  https://www.youtube.com/watch?v=FshU58nI0Ts
-  
-- Image: https://pixabay.com/de/photos/mammutbaum-bäume-stämme-baumstämme-5978487/
-  
-- Source Code: [./carlatex/Lumberjack/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/Lumberjack/)
-
-## Finale
+## Grand Finale
 
 <img align="right" src="./ulrike/finale/finale.png" height="100">
 
@@ -118,29 +161,3 @@ The full video is available from ...
   https://www.youtube.com/watch?v=D2MqD3FEjcs
   
 - Source Code: [./ulrike/finale/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/finale/)
-
-## Prologue
-
-<img align="right" src="./samcarter/globe/globe.png" height="100">
-
-- Sound: "As You Like It" by William Shakespeare
-  Read by Benedict Cumberbatch
-  0:00-???
-  https://www.youtube.com/watch?v=0178jo7Mka0
-  
-- Image: https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg
-  
-- Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)
-
-## Commercial Break II
-
-<img align="right" src="./samcarter/dante/dante.png" height="100">
-
-- Sound: Basse danse La Magdalena
-  Pierre Attaingnant
-  0:40-???
-  https://www.youtube.com/watch?v=UF1MwE7Knfs
-  
-- Image: https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg
-  
-- Source Code: [./samcarter/dante/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dante/)

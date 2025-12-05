@@ -1,65 +1,36 @@
-% !Mode:: "TeX:UTF-8:Main"
-% arara: pdflatex
-% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 1, format: gif}
-% arara: showfile: {format: gif}
-\documentclass{article}
-\usepackage[T1]{fontenc}
-\usepackage{geometry}
-\geometry{papersize={160mm,90mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
-\usepackage[svgnames,x11names]{xcolor}
-\usepackage[osf]{AlegreyaSans}
-\usepackage{eso-pic}
-\usepackage{xfp}
-\usepackage{tikz}
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{%
-  shapes,
-  decorations.shapes,
-  decorations.fractals,
-  decorations.markings,
-  shadows
-}
+\documentclass[aspectratio=169,xcolor={svgnames,x11names}]{beamer}
 
+\usepackage[T1]{fontenc}
+\usepackage[osf]{AlegreyaSans}
+\usepackage{tabularray}
+\usepackage[export]{adjustbox}
+\graphicspath{{images/}}
 \usepackage[most]{tcolorbox}
 
-\usepackage{tikzducks,array}
-\usepackage{url}
+\setbeamercolor{background canvas}{bg=Seashell1}
 
-\graphicspath{{images/}}
-\begin{document}\enlargethispage{1cm}
-\AddToShipoutPictureBG{%
- \AtPageLowerLeft{%
- \begin{tikzpicture}[overlay,remember picture]
- \fill[Seashell1] (0,0) rectangle (\paperwidth,\paperheight);
- \end{tikzpicture}}}
-\LARGE\sffamily
-\bfseries\scshape
+\begin{document}
+
+\begin{frame}
+\scshape\bfseries
 \centering  A Tikzducks Production
 
-%\Large
-\fontsize{14.4}{16pt}\selectfont
-\vfill
-\begin{tabular}{*{4}{>{\centering}p{0.21\linewidth}}}
-\multicolumn{4}{c}{Graphics, Animations, Video and Sound}\tabularnewline[5pt]
-SamCarter & Paulo Cereda  & Ulrike Fischer &  Carla Maggi   \tabularnewline
-\vspace{-\ht\strutbox}\includegraphics[width=0.8\linewidth,keepaspectratio]{samcarter-avatar}
-&\vspace{-\ht\strutbox}\includegraphics[width=0.8\linewidth,keepaspectratio]{cereda-avatar}
-&\vspace{-\ht\strutbox}\includegraphics[width=0.8\linewidth,keepaspectratio]{ulrike-avatar}
-&\vspace{-\ht\strutbox}\includegraphics[width=0.75\linewidth,keepaspectratio]{CarLaTeX_logo}
-\tabularnewline
-\end{tabular}\\
-\begin{tabular}{>{\centering}p{0.21\linewidth}>{\centering}p{0.20\linewidth}>{\centering}p{\dimexpr0.60\linewidth-6\tabcolsep}}
+\vskip0.4cm
 
-Storyboard  & Assistant &Cast \tabularnewline
-\makebox[0pt][c]{Gert Fischer}      &Bär     &Loads of Tikzlings\tabularnewline
-\includegraphics[width=0.8\linewidth,]{gert-avatar}
-&\includegraphics[width=0.8\linewidth,]{baer}&
+\begin{tblr}{
+  colspec={XXXXX},
+  cells={halign=c,valign=h},
+  hspan=minimal,
+}
+\SetCell[c=5]{} Graphics, Animations, Video and Sound &&&&\\
+SamCarter & Paulo Cereda  & Ulrike Fischer &  Carla Maggi & Max Chernoff\\
+\includegraphics[width=\linewidth]{samcarter-avatar} & \includegraphics[width=\linewidth]{cereda-avatar} & \includegraphics[width=\linewidth]{ulrike-avatar} & \includegraphics[width=\linewidth]{CarLaTeX_logo} & \includegraphics[width=\linewidth]{max-avatar}\\[0.3cm]
+{Storyboard\\Gert Fischer} & {Assistant\\Bär} & \SetCell[c=3]{} {Cast\\Loads of Tikzlings} &&\\[-0.4cm]
+\includegraphics[width=\linewidth,valign=T]{gert-avatar} & \includegraphics[width=\linewidth,valign=T]{baer} & \SetCell[c=3]{}
+\vspace*{-\baselineskip}%
 \begin{tcolorbox}[size=fbox,fit to height=2.4cm,frame empty,interior empty]
-\raggedright
-Music, sound and lyrics by 
-...
-and Spanac (via \url{www.freesoundslibrary.com}) % intermission jingle from https://www.freesoundslibrary.com/christmas-music-box-music/
-\end{tcolorbox}
-\end{tabular}
-\vfill\vfill
+Music, sound and lyrics by Paul Anka, Pierre Attaignant, Natio Herb Brown, Ludwig van Beethoven, Pierre Certon, Eurythmics, Arthur Freed, Franz Gruber, Joe Hickerson, Gene Kelly, Thomas Koschat, Calixa Lavallée, Annie Lenox, John Lunn, Henri Mancini, Monty Python, Wolfgang Amadeus Mozart, Myer Levin Advanced Steelband, Michael Palin, Ross Parker, Jacques Revaux, Miguel Rios, Amado Rodriguez, Pete Seeger, William Shakespeare, Frank Sinatra, David A. Stuart, Richard Wagner, Robert Stanley Weir and Spanac (via \url{www.freesoundslibrary.com}) % intermission jingle from https://www.freesoundslibrary.com/christmas-music-box-music/
+\end{tcolorbox}\\
+\end{tblr}
+\end{frame}
 \end{document}

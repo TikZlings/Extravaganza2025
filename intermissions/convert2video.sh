@@ -79,16 +79,19 @@ pdftoppm -png -r 150 -progress -singlefile extravaganza-titlepage.pdf icon_large
 
 # Converting
 repeatconvert title "./extravaganza-titlepage.pdf" 101
-convert2video mirage "Mirage"
+convert2video globe "Prologue"
+# Silent Beach
+convert2video flower-field "A Nature Lover"
 convert2video StormyWeather "Stormy Weather"
-convert2video flower-field "Where have all the flowers gone?"
-convert2video Avignon "En vacançes"
-convert2video cheese "Sweet dreams are made of cheese"
+convert2video Lumberjack "Lumberjack"
+# Commercial Break
+convert2video mirage "A Mirage"
+convert2video HappyChristmas "Happy Christmas"
+convert2video cheese "Sweet Dreams are Made of Cheese"
+convert2video Avignon "En Vacançes"
+convert2video dante "Commercial Break"
 convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
-convert2video Lumberjack "Lumberjack"
-convert2video finale "Finale"
-convert2video HappyChristmas "Happy Christmas"
-convert2video globe "Prologue"
-convert2video dante "Commercial Break II"
+# Hockey
+convert2video finale "Grand Finale"
 repeatconvert credits "./extravaganza-credits.pdf" 150
