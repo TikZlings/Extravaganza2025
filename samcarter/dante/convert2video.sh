@@ -8,7 +8,7 @@ pdftoppm -png -r 240 -progress dante.pdf dante
 # convert to video
 ffmpeg \
   -ss 00:00:00 -i dante-%03d.png \
-  -ss 00:00:39 -i Pierre_Attaingnant_Basse_danse_La_Magdalena-Thomas_Turner-UF1MwE7Knfs.m4a \
+  -ss 00:00:37 -i Pierre_Attaingnant_Basse_danse_La_Magdalena-Thomas_Turner-UF1MwE7Knfs.m4a \
   -shortest dante_raw.mp4
 
 # repair video
