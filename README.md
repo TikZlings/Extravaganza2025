@@ -119,7 +119,7 @@ The full video is available from ...
   
 - Source Code: [./ulrike/finale/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/finale/)
 
- ## All the world's a stage
+## Prologue
 
 <img align="right" src="./samcarter/globe/globe.png" height="100">
 
@@ -132,7 +132,7 @@ The full video is available from ...
   
 - Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)
 
-## The Divine Comedy
+## Commercial Break II
 
 <img align="right" src="./samcarter/dante/dante.png" height="100">
 
