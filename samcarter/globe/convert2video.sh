@@ -2,7 +2,7 @@
 rm globe.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 globe.pdf globe
+pdftoppm -png -r 48 -progress -singlefile -f 167 globe.pdf globe
 pdftoppm -png -r 240 -progress globe.pdf globe
 
 # convert to video

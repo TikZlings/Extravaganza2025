@@ -2,7 +2,7 @@
 rm dante.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 dante.pdf dante
+pdftoppm -png -r 48 -progress -singlefile -f 297 dante.pdf dante
 pdftoppm -png -r 240 -progress dante.pdf dante
 
 # convert to video

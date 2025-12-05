@@ -1,9 +1,9 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikzlings}
+\usetikzlibrary{calc,decorations.markings}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{Shakespeare's_Globe_(39593782581)}}
 \graphicspath{{include/}}
 
 \usepackage{xfp}
@@ -14,15 +14,33 @@
 
 \begin{document}
 
-\begin{frame}
-  \begin{tikzpicture}[remember picture, overlay]
+\begin{frame}%<1,50,100,150,200,250,300,350,400,450>
+  \begin{tikzpicture}[
+    remember picture,
+    overlay,
+    decoration={
+      markings,
+      % Thanks a lot to @marmot for this tikzmagick https://topanswers.xyz/tex?q=387
+      mark=at position \insertoverlaynumber/450 with {
+        \path (-0.1cm,0) coordinate (aux0) (0.1cm,0) coordinate(aux1)
+   	(0,0) coordinate(aux2);
+   	\pgftransformreset
+   	\path let \p1=($(aux1)-(aux0)$), \n1={atan2(\y1,\x1)} in
+   	(aux2) node[rotate=\n1-90]{\includegraphics[width=0.6cm]{tardis.pdf}};
+      }
+    }
+  ]
+
+    \path[xshift=-5cm,yshift=4cm,postaction=decorate] (9.6868, 0.7619).. controls (10.6306, 0.2913) and (10.5318, 0.1447) .. (11.7596, -1.0429).. controls (12.9334, -2.1783) and (14.9244, -0.9182) .. (16.3479, -0.77).. controls (17.7023, -0.6291) and (17.3324, -0.2652) .. (16.201, -0.2413).. controls (15.0637, -0.2172) and (14.411, -2.2785) .. (16.065, -1.5874).. controls (17.5682, -0.9592) and (18.7936, -1.2069) .. (20.4305, -1.7649).. controls (20.9644, -1.9469) and (21.5259, -2.1863) .. (22.1021, -2.1016);
+
+    \node at (current page.center) {\includegraphics[width=\paperwidth]{Shakespeare's_Globe_(39593782581)}};
 
     % closed
     \node<1-77,105-130,181-205,257-280,404-450> at (7,-2.5) {\includegraphics[scale=0.4]{Shakespeare_closed}};
 
     % open
     \node<78-104,131-180,206-256,281-403> at (7,-2.5) {%
-      \ifnum \intmodnn{\thepage}{20} > 15
+      \ifnum \intmodnn{\insertoverlaynumber}{20} > 15
         \includegraphics[scale=0.4]{Shakespeare_closed}%
       \else
         \includegraphics[scale=0.4]{Shakespeare_open}%
