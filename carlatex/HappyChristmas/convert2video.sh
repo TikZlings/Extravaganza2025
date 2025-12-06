@@ -2,8 +2,8 @@
 rm HappyChristmas.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 265 HappyChristmas.pdf HappyChristmas
-pdftoppm -png -r 240 -progress HappyChristmas.pdf HappyChristmas
+pdftoppm -png -r 48 -progress -singlefile -f 265 HappyChristmas_repeat.pdf HappyChristmas
+pdftoppm -png -r 240 -progress HappyChristmas_repeat.pdf HappyChristmas
 
 # convert to video
 ffmpeg \
