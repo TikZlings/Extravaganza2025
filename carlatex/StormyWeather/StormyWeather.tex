@@ -16,8 +16,8 @@
     },
     mydecoration/.style={
         decoration={
-      markings,  
-      mark=at position \thepage/500 
+      markings,
+      mark=at position \thepage/500
 			with {
 				\node[rotate=#1]%, anchor=south, scale=4]%
 					{\includegraphics[height=1.75cm]{bat}};
@@ -35,28 +35,28 @@
 	    to[bend right=60] (5, 1)
 	    to[bend right=60] (8, -1)
 	    to[bend right=60] cycle;
-		  								
-    \path[mydecoration={-30}, postaction=decorate] (1.25, 2)   
-      to[bend right=75] (3, 0.75) 
-      to[bend right=45] (3.25, 2) 
-      to[bend right=45] (1.5, 2.75) 
+
+    \path[mydecoration={-30}, postaction=decorate] (1.25, 2)
+      to[bend right=75] (3, 0.75)
+      to[bend right=45] (3.25, 2)
+      to[bend right=45] (1.5, 2.75)
       to[bend right]    (.5, 1.5)
-      to[bend right=15] (1.25, 0) 
-      to[bend right=15] (2, -0.5) 
+      to[bend right=15] (1.25, 0)
+      to[bend right=15] (2, -0.5)
       to[bend right]    (3.75, 1.75);
-												
-		\path[mydecoration={30}, postaction=decorate] (12.75, 2) 
-		  to [bend left=75]	(11, 0.75)  
-			to [bend left=45] (10.75, 2) 
-			to [bend left=45] (12.5, 2.75) 
+
+		\path[mydecoration={30}, postaction=decorate] (12.75, 2)
+		  to [bend left=75]	(11, 0.75)
+			to [bend left=45] (10.75, 2)
+			to [bend left=45] (12.5, 2.75)
 			to [bend left]    (13.5, 1.5)
-			to [bend left=15] (12.75, 0) 
-			to [bend left=15] (12, -0.5) 
+			to [bend left=15] (12.75, 0)
+			to [bend left=15] (12, -0.5)
 			to [bend left]    (10.25, 1.75);
-                               		
+
     % credit for background image
     \node[white,text width=.7\paperwidth,font=\tiny,align=center] at (7,-4.82)
-      {Image source: \url{https://pixabay.com/videos/sea-ocean-waves-crashing-storm-200244/}};
+      {Background video source: \url{https://pixabay.com/videos/sea-ocean-waves-crashing-storm-200244/}};
 
   \end{tikzpicture}
   \pause[500]
