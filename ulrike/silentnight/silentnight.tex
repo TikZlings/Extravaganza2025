@@ -26,7 +26,7 @@
 \ExplSyntaxOn
 \newcommand\calcmodpage[2]{\int_eval:n{\int_mod:nn{\value{page}+#2}{#1}+1}}
 \newcommand\drumstickrotate{%
- \int_compare:nNnTF{\int_mod:nn{\value{page}}{10}}<{5}
+ \int_compare:nNnTF{\int_mod:nn{\value{page}}{16}}<{8}
   {\def\myrotate{-80}}
   {\def\myrotate{-100}}}
 \ExplSyntaxOff
@@ -75,7 +75,7 @@
       (0.89\textwidth,-0.31\textheight) pic[black,rotate=\myrotate]{drumstick};
     \node[white,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{www.freepik.com}};           
   \end{tikzpicture}%
-  \pause[120]
+  \pause[540]
 \end{frame}	
 	
 \end{document} 
