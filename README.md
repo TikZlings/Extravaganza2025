@@ -19,6 +19,17 @@ The full video is available from ...
 
 ## Silent Beach
 
+<img align="right" src="./ulrike/silentnight/silentnight.png" height="100">
+
+- Music: Silent Night
+  Myer Levin Advanced Steel Band
+  0:08-0.28
+  https://www.youtube.com/watch?v=IaeVqF05nTg
+  
+- Image: www.freepik.com
+  
+- Source Code: [./ulrike/silentnight/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/silentnight/)
+
 ## A Nature Lover
 
 <img align="right" src="./paulo/flower-field/flower-field.png" height="100">

@@ -15,7 +15,8 @@ video_clips = [
   VideoFileClip("../intermissions/title.mp4"),
   VideoFileClip("../intermissions/globe.mp4"),
   VideoFileClip("../samcarter/globe/globe.mp4"),
-  # silent beach
+  VideoFileClip("../intermissions/silentnight.mp4"),
+  VideoFileClip("../ulrike/silentnight/silentnight.mp4"),
   VideoFileClip("../intermissions/flower-field.mp4"),
   VideoFileClip("../paulo/flower-field/flower-field.mp4"),
   VideoFileClip("../intermissions/StormyWeather.mp4"),

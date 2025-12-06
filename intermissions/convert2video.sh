@@ -80,7 +80,7 @@ pdftoppm -png -r 150 -progress -singlefile extravaganza-titlepage.pdf icon_large
 # Converting
 repeatconvert title "./extravaganza-titlepage.pdf" 101
 convert2video globe "Prologue"
-# Silent Beach
+convert2video silentnight "Silent Beach"
 convert2video flower-field "A Nature Lover"
 convert2video StormyWeather "Stormy Weather"
 convert2video Lumberjack "Lumberjack"
