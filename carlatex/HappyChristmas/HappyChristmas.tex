@@ -1,0 +1,56 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikzlings}
+\usetikzlibrary{decorations.markings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\tikz{\filldraw[cyan!30!white] (current page.south west) -- (current page.south east) --
+	    (current page.north east) -- (current page.north west)};}
+\graphicspath{{include/}}
+
+% Copied from samcarter's "lion" in Extravaganza 2024
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+\newcounter{mystep}
+\newcommand{\mygrade}{15}
+\newcommand{\setstep}{%
+\renewcommand{\mygrade}{-15}
+\ifnum \intmodnn{\thepage}{2} = 1
+  \setcounter{mystep}{0}
+  \renewcommand{\mygrade}{15}
+\fi%
+\stepcounter{mystep}%
+}
+
+% trick taken from https://topanswers.xyz/tex?q=1989
+\tikzset{
+    use page relative coordinates/.style={
+        shift={(current page.south west)},
+        x={(current page.south east)},
+        y={(current page.north west)}
+    },
+}
+
+\begin{document}
+\begin{frame}
+  \setstep
+  \begin{tikzpicture}[remember picture, overlay]
+   	\node[anchor=south] at (7,-4.7)
+			{\includegraphics[page=\themystep]{tree}};
+
+	  \node[rotate=\mygrade, anchor=south] at (2.5,-4.3)
+			{\includegraphics[height=2.3cm]{elephant}};
+	  \node[rotate=\mygrade, anchor=south] at (1.3,-2)
+			{\includegraphics[height=2.3cm]{elephant}};
+	  \node[rotate=\mygrade, anchor=south] at (13,-2.1)
+			{\includegraphics[height=2.3cm]{elephant}};
+	  \node[rotate=\mygrade, anchor=south] at (11,-4.1)
+			{\includegraphics[height=2.3cm]{elephant}};
+ 
+  \end{tikzpicture}
+  \pause[500]
+\end{frame}%
+\end{document}
