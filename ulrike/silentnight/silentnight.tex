@@ -1,4 +1,5 @@
-% !TeX TS-program = lualatex -interaction=nonstopmode % | txs:///view-pdf | txs:///view-log
+% !TeX document-id = {fafd47c4-5a0b-43b5-89f5-1ea03d97df9d}
+% !TeX TS-program = latexmk -pdflua % | txs:///view-pdf | txs:///view-log
 
 %!Mode:: "TeX:DE:UTF-8:Main"
 \documentclass[aspectratio=169]{beamer}
@@ -75,7 +76,7 @@
       (0.59\textwidth,-0.31\textheight)pic[green!80!black,rotate=\myrotate]{drumstick}
       (0.74\textwidth,-0.31\textheight) pic[red!80!black,rotate=\myrotate]{drumstick}
       (0.89\textwidth,-0.31\textheight) pic[black,rotate=\myrotate]{drumstick};
-    \node[black,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://www.freepik.com/free-photo/tropical-beach_1035215.htm}};
+    \node[black,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://www.freepik.com/free-photo/tropical-beach_1035215.htm}};
   \end{tikzpicture}%
   \pause[540]
 \end{frame}
