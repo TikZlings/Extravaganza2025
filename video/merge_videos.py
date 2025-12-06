@@ -25,8 +25,8 @@ video_clips = [
   # canada
   VideoFileClip("../intermissions/mirage.mp4"),
   VideoFileClip("../carlatex/mirage/mirage.mp4"), 
-  # VideoFileClip("../intermissions/HappyChristmas.mp4"),
-  # VideoFileClip("../carlatex/HappyChristmas/HappyChristmas.mp4"),
+  VideoFileClip("../intermissions/HappyChristmas.mp4"),
+  VideoFileClip("../carlatex/HappyChristmas/HappyChristmas.mp4"),
   VideoFileClip("../intermissions/cheese.mp4"),
   VideoFileClip("../samcarter/cheese/cheese.mp4"),
   VideoFileClip("../intermissions/Avignon.mp4"),
