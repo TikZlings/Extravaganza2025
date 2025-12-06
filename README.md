@@ -1,8 +1,18 @@
 # The Great TikZlings Christmas Extravaganza 2025
 
-This repository contains the souce code of the Great TikZlings Extravanganza 2025, brought to you by [Ulrike](https://github.com/u-fischer) & [Gert Fischer](https://github.com/g-fischer), [Carla Maggi](https://github.com/CarLaTeX), [Paulo Cereda](https://github.com/cereda) and [samcarter](https://github.com/samcarter).
+This repository contains the souce code of the Great TikZlings Extravanganza 2025, brought to you by [Ulrike](https://github.com/u-fischer) & [Gert Fischer](https://github.com/g-fischer), [Carla Maggi](https://github.com/CarLaTeX), [Max Chernoff](https://github.com/gucci-on-fleek), [Paulo Cereda](https://github.com/cereda) and [samcarter](https://github.com/samcarter).
 
 The full video is available from ...
+
+[![](./intermissions/icon_large.png)](...)
+
+## Calendar
+
+To shorten the waiting time until the next Extravaganza, we created the exclusive "The Great TikZlings Calendar 2026". It has all important dates from the TeX-World and the Tikzling universe. Stay up to date!
+
+<a href="https://raw.githubusercontent.com/TikZlings/Extravaganza2025/main/calendar/extravaganza_calendar.pdf"><img src="./calendar/extravaganza_calendar-preview.png" alt="The Great TikZlings Calendar 2026" height="400"></a>
+
+(The design was modified from LianTze Lim's fantastic calendar template  https://tex.my/category/calendar/ which made creating this calendar really easy.)
 
 ## Prologue
 
