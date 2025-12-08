@@ -1,7 +1,8 @@
+% !Mode:: "TeX:DE:UTF-8:Main"
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikzlings}
-
+\usetikzlibrary{shapes.geometric}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{stadion}}
 \graphicspath{{include/}}
@@ -14,27 +15,29 @@
         y={(current page.north west)}
     },
 }
+\ExplSyntaxOn
+\let\intmod\int_mod:nn
 
-
+\ExplSyntaxOff
+\newcommand\placeduck[1]{
+     \edef\temppos{\inteval{\intmod{10*\value{page}+#1}{360}}} 
+     \node[anchor=center,inner sep=0pt] at (nhl.\temppos) 
+      {\includegraphics[scale=0.8,page=\ifnum\temppos>180 2\else 1\fi]{nhl-duck}};}
 \begin{document}
 	
 \begin{frame}
   \begin{tikzpicture}[remember picture, overlay,use page relative coordinates]
-  
-   \path(0.5,0.4)node{\includegraphics[scale=0.8]{nhl-duck}};
-  
-   \path(0.2,0.2)node[xscale=-1]{\includegraphics[scale=0.8]{nhl-duck}};
-   
-   \path(0.8,0.3)node{\includegraphics[scale=0.8]{nhl-duck}};
-   
-   \path(0.3,0.4)node{\includegraphics[scale=0.8]{nhl-duck}};
-   
-   \path(0.5,0.15)node[xscale=-1]{\includegraphics[scale=0.8]{nhl-duck}};
+   \node[name=nhl,shape=ellipse] at (0.5,0.3) {\mbox{}\hspace{3cm}\rule{0pt}{1.7cm}\hspace{3cm}\mbox{}};
+   \placeduck{180}
+   \placeduck{252}
+   \placeduck{324}
+   \placeduck{36}
+   \placeduck{108}
     % credit for background image
     \node[white,text width=.7\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://de.freepik.com/kostenloses-ki-bild/hockey-eisbahn-sportarena-leeres-feldstadion-erstellt-mit-generativer-ki_40007569.htm}};  
     
   \end{tikzpicture}
-  %\pause[600]
+  \pause[400]
 \end{frame}	
 	
 \end{document} 
