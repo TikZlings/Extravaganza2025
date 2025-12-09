@@ -2,8 +2,8 @@
 rm nhl.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 nhl.pdf nhl
-pdftoppm -png -r 240 -progress nhl.pdf nhl
+pdftoppm -png -r 48 -progress -singlefile -f 10 nhl_repeat.pdf nhl
+pdftoppm -png -r 240 -progress nhl_repeat.pdf nhl
 
 # convert to video
 ffmpeg \
