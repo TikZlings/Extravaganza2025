@@ -172,6 +172,14 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 
 ## Hockey
 
+<img align="right" src="./ulrike/nhl/nhl.png" height="100">
+
+- Music: Schneewalzer
+  0:05 - 0:025
+  https://www.youtube.com/watch?v=r4ugf3FTCj4
+  
+- Source Code: [./ulrike/nhl/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/nhl/)
+
 ## Birds
 
 <img align="right" src="./ulrike/birds/birds.png" height="100">

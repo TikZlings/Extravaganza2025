@@ -38,7 +38,8 @@ video_clips = [
   VideoFileClip("../samcarter/dinner/dinner.mp4"),
   VideoFileClip("../intermissions/TikZlingsAbbey.mp4"),
   VideoFileClip("../samcarter/TikZlingsAbbey/TikZlingsAbbey.mp4"),
-  # hockey
+  VideoFileClip("../intermissions/nhl.mp4"),
+  VideoFileClip("../ulrike/nhl/nhl.mp4"),
   VideoFileClip("../intermissions/birds.mp4"),
   VideoFileClip("../ulrike/birds/birds.mp4").volumex(25),
   VideoFileClip("../intermissions/finale.mp4"),
