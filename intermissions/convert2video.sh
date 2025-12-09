@@ -84,7 +84,7 @@ convert2video silentnight "Silent Beach"
 convert2video flower-field "A Nature Lover"
 convert2video StormyWeather "Stormy Weather"
 convert2video Lumberjack "Lumberjack"
-# Commercial Break
+convert2video Canada "Commercial Break"
 convert2video mirage "A Mirage"
 convert2video HappyChristmas "Happy Christmas"
 convert2video cheese "Sweet Dreams are Made of Cheese"
@@ -92,7 +92,7 @@ convert2video Avignon "En Vacançes"
 convert2video dante "Commercial Break"
 convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
-# Hockey
+convert2video nhl "Hockey"
 convert2video birds "Birds"
 convert2video finale "Grand Finale"
 repeatconvert credits "./extravaganza-credits.pdf" 150

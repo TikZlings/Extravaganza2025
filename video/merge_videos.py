@@ -23,7 +23,8 @@ video_clips = [
   VideoFileClip("../carlatex/StormyWeather/StormyWeather.mp4"),
   VideoFileClip("../intermissions/Lumberjack.mp4"),
   VideoFileClip("../carlatex/Lumberjack/Lumberjack.mp4"),
-  # canada
+  # VideoFileClip("../intermissions/Canada.mp4"),
+  # VideoFileClip("../Max/Canada/Canada.mp4"),
   VideoFileClip("../intermissions/mirage.mp4"),
   VideoFileClip("../carlatex/mirage/mirage.mp4"), 
   VideoFileClip("../intermissions/HappyChristmas.mp4"),
