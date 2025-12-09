@@ -93,5 +93,6 @@ convert2video dante "Commercial Break"
 convert2video dinner "Dinner"
 convert2video TikZlingsAbbey "TikZlings Abbey"
 # Hockey
+convert2video birds "Birds"
 convert2video finale "Grand Finale"
 repeatconvert credits "./extravaganza-credits.pdf" 150
