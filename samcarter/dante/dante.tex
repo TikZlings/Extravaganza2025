@@ -47,7 +47,10 @@
     \end{scope}
 
     % credit for background image
-    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg} (by Larry Lamsa, CC BY 2.0)};
+    \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {
+      Image source: \url{https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg} (by Larry Lamsa, CC BY 2.0)
+%      \linebreak Music source: Pierre Attaingnant -- Basse danse La Magdalena
+    };
 
     \fill<350->[black,opacity=(\insertoverlaynumber-350)/10] (current page.south east) rectangle (current page.north west);
 

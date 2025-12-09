@@ -5,10 +5,15 @@
 \usetikzlibrary{tikzlings,ducks}
 \usetikzlibrary{decorations.pathmorphing,decorations.shapes,decorations.markings}
 \setbeamertemplate{navigation symbols}{}
-\ExplSyntaxOn 
-\setbeamertemplate{background~ canvas}{\includegraphics[page=\int_eval:n{\int_mod:nn{\value{page}}{10}+1},
-width=\paperwidth]{starsky-dark}}
-\ExplSyntaxOff   
+\ExplSyntaxOn
+\setbeamertemplate{background~ canvas}{%
+  \includegraphics[page=\int_eval:n{\int_mod:nn{\value{page}}{10}+1},
+width=\paperwidth]{starsky-dark}%
+%  \begin{tikzpicture}[remember~picture,overlay]
+%    \node[white,text~width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current~page.south) {Music~by~Miguel~Rios~--~A~Song~of~Joy~(1970)};
+%  \end{tikzpicture}%
+}
+\ExplSyntaxOff
 
 \newcommand\tikzlingfirework[3]{%#1 tikzling, #2 x faktor, #3 y factor
    \foreach \radius in {4,...,16}
@@ -17,7 +22,7 @@ width=\paperwidth]{starsky-dark}}
         \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
          % fireworks
          \pgfmathparse{100-(\radius-1)*10}%;
-         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]    
+         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]
          \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius ex);
          \end{scope}
         \end{tikzpicture}
@@ -26,7 +31,7 @@ width=\paperwidth]{starsky-dark}}
         \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
          % fireworks
          \pgfmathparse{100-(\radius-1)*10}%;
-         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]    
+         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]
          \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius.5 ex);
          \end{scope}
         \end{tikzpicture}
@@ -39,7 +44,7 @@ width=\paperwidth]{starsky-dark}}
         \path[use as bounding box](0,0) rectangle (\textwidth,\textheight);
          % fireworks
          \pgfmathparse{100-(\radius-1)*10}%;
-         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]    
+         \begin{scope}[decoration={markings,mark=between positions 0 and 1 step 0.2 with{\path (0,0)pic[scale=\fpeval{0.1+0.05*\radius}]{#1};}}]
          \path[postaction=decorate] (0.#2\textwidth,0.#3\textheight) circle (\radius ex);
          \end{scope}
         \end{tikzpicture}
@@ -62,7 +67,7 @@ width=\paperwidth]{starsky-dark}}
      }
      {
        \tikzlingfirework{#1}{\l_tmpa_tl}{\l_tmpa_tl}
-     }  
+     }
  }
 \ExplSyntaxOff
 
