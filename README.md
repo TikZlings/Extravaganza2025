@@ -172,6 +172,16 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 
 ## Hockey
 
+## Birds
+
+<img align="right" src="./ulrike/birds/birds.png" height="100">
+
+- Music: The Birds children singing
+  1:17 - ??
+  https://www.youtube.com/watch?v=JOGC3sNJJxs
+  
+- Source Code: [./ulrike/birds/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/birds/)
+
 ## Grand Finale
 
 <img align="right" src="./ulrike/finale/finale.png" height="100">
