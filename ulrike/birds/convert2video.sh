@@ -2,7 +2,7 @@
 rm birds.mp4
 
 # convert to png images
-pdftoppm -png -r 48 -progress -singlefile -f 10 birds_repeat.pdf birds
+pdftoppm -png -r 48 -progress -singlefile -f 336 birds.pdf birds
 pdftoppm -png -r 240 -progress birds_repeat.pdf birds
 
 # convert to video
