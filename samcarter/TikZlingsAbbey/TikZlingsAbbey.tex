@@ -1,6 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikzlings}
+\usetikzlibrary{fpu}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{Highclere_Castle_-_Through_the_Trees_-_panoramio}}
@@ -12,31 +13,24 @@
 
 \begin{document}
 
+\foreach \macro [remember=\x as \lastx (initially 2.5),remember=\y as \lasty (initially -7.3)] in {1,...,400}{
+
+\pgfmathsetmacro{\scale}{1-0.002*\macro}
+\pgfmathsetmacro{\x}{\lastx+0.020*\scale}
+\pgfmathsetmacro{\y}{\lasty+0.017*\scale}
+
 \begin{frame}
   \begin{tikzpicture}[remember picture, overlay]
-
-    \begin{scope}[
-      xshift=(1200.0+\thepage)*0.005cm,
-      yshift=(-700.0+\thepage)*0.01cm,
-      scale=1-0.002*\thepage
-    ]
-      \ifnum \intmodnn{\thepage}{20} > 10
-        \dog[back,tailpos=left]
-      \else
-        \dog[back,tailpos=right]
-      \fi
-      \ifnum \intmodnn{\thepage}{20} > 10
-        \coati[tophat,xshift=2.5cm,back,scale=1.5,leftstep]
-      \else
-        \coati[tophat,xshift=2.5cm,back,scale=1.5,rightstep]
-      \fi
-    \end{scope}
+    \ifnum \intmodnn{\thepage}{20} > 10
+      \node[anchor=south] at (\x,\y) {\includegraphics[scale=\scale,page=1]{lord_and_dog}};
+    \else
+      \node[anchor=south] at (\x,\y) {\includegraphics[scale=\scale,page=2]{lord_and_dog}};
+    \fi
 
     % credit for background image
     \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://commons.wikimedia.org/wiki/File:Highclere_Castle_-_Through_the_Trees_-_panoramio.jpg} (by Adrian Farwell, CC BY 3.0)};
-
   \end{tikzpicture}
-  \pause[400]
 \end{frame}
+}
 
 \end{document}
