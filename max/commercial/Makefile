@@ -49,6 +49,6 @@ commercial.mp4: commercial.pdf commercial.m4a
 		-i commercial.m4a \
 		-shortest \
 		-c:a copy \
-		-c:v hevc_vaapi -vf "format=nv12,hwupload" \
+		-c:v h264_vaapi -vf "format=nv12,hwupload" \
 		-movflags +faststart \
 		"$@"
