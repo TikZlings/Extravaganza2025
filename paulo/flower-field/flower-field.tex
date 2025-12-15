@@ -11,7 +11,7 @@
 #2
 \begin{tikzpicture}[remember picture,overlay]
   % credit for background image
-  \node[text width=\paperwidth,font=\tiny,align=center,color=white] at ([yshift=0.35cm]current page.south) {Image source: \url{https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm}};
+  \node[text width=\paperwidth,font=\tiny,align=center,color=white] at ([yshift=0.35cm]current page.south) {Video source: \url{https://pixabay.com/videos/poppy-violet-blossoms-flower-field-167027/}};
 \end{tikzpicture}
 \end{frame}}}{}{}
 
@@ -36,13 +36,13 @@
         \pgfmathsetmacro{\xpos}{#1}
         \pgfmathsetmacro{\nparabola}{floor(#1 / \parabolawidth)}
         \pgfmathsetmacro{\hcurrent}{\nparabola * \parabolawidth + 0.5 * \parabolawidth}
-        \pgfmathsetmacro{\ypos}{-1 * (#1 - \hcurrent)^2 + 2}
+        \pgfmathsetmacro{\ypos}{-1 * (#1 - \hcurrent)^2 + 0}
         \path (\xpos, \ypos) pic{anteater};
     \end{tikzpicture}%
 }
 
 % https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
-\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{beautiful-spring-landscape-with-blooming-flowers-reduced.jpg}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{167027-835960466_tiny-\thepage}}
 
 \begin{document}
 

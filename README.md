@@ -40,19 +40,6 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   
 - Source Code: [./ulrike/silentnight/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/silentnight/)
 
-## A Nature Lover
-
-<img align="right" src="./paulo/flower-field/flower-field.png" height="100">
-
-- Music: Where Have All The Flowers Gone,
-  Pete Seeger,
-  0:08-0:26,
-  https://www.youtube.com/watch?v=JANHG_OYbso
-  
-- Image: https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
-  
-- Source Code: [./paulo/flower-field/](https://github.com/TikZlings/Extravaganza2025/tree/main/paulo/flower-field/)
-
 ## Stormy Weather
 
 <img align="right" src="./carlatex/StormyWeather/StormyWeather.png" height="100">
@@ -104,6 +91,19 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 - Image: https://pixabay.com/de/photos/wüste-sand-düne-sonnenuntergang-9019840
   
 - Source Code: [./carlatex/mirage/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/mirage/)
+
+## A Nature Lover
+
+<img align="right" src="./paulo/flower-field/flower-field.png" height="100">
+
+- Music: Where Have All The Flowers Gone,
+  Pete Seeger,
+  0:08-0:26,
+  https://www.youtube.com/watch?v=JANHG_OYbso
+  
+- Image: https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
+  
+- Source Code: [./paulo/flower-field/](https://github.com/TikZlings/Extravaganza2025/tree/main/paulo/flower-field/)
 
 ## Happy Christmas
 
