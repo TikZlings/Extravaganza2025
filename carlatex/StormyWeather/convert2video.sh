@@ -1,9 +1,6 @@
 # clean up old video
 rm StormyWeather.mp4
 
-# extract video stills
-ffmpeg -i 200244-912370046_tiny.mp4 200244-912370046_tiny-%d.jpg
-
 # convert to images
 pdftoppm -png -r 48 -progress -singlefile -f 173 StormyWeather.pdf StormyWeather
 pdftoppm -r 240 -progress StormyWeather.pdf StormyWeather
