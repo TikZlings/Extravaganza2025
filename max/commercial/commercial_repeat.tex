@@ -1,10 +1,19 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{pdfpages}
+\usepackage{tikz}
 \setbeamertemplate{navigation symbols}{}
 
 \begin{document}
 
-\includepdf[pages=-,width=\paperwidth]{commercial}
+\includepdf[
+  pages=-,
+  width=\paperwidth,
+  pagecommand={
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[white,text width=\paperwidth,font=\tiny,align=center] at ([yshift=0.35cm]current page.south) {Image source: \url{https://pixabay.com/de/photos/kanada-tag-calgary-alberta-kanada-5370627/}};
+    \end{tikzpicture}
+  }
+]{commercial}
 
 \end{document}
