@@ -93,6 +93,6 @@ convert2video dante "Commercial Break"
 convert2video dinner "Dinner\\linebreak \\small Dedicated to David C."
 convert2video TikZlingsAbbey "TikZlings Abbey"
 convert2video nhl "Hockey"
-convert2video birds "Birds"
+convert2video birds "Birds and Bears"
 convert2video finale "Grand Finale"
 repeatconvert credits "./extravaganza-credits.pdf" 150

@@ -191,7 +191,7 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   
 - Source Code: [./ulrike/nhl/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/nhl/)
 
-## Birds
+## Birds and Bears
 
 <img align="right" src="./ulrike/birds/birds.png" height="100">
 
