@@ -1,0 +1,456 @@
+#!/usr/bin/env -S context --once --forcecld
+
+----------------
+--- Preamble ---
+----------------
+
+-- Shorthands
+local abs <const> = math.abs
+local bp <const> = string.formatters["%0.5fbp"] --- @type fun(n:number):string
+local ctx <const> = context
+local insert <const> = table.insert
+local mp <const> = ctx.metafun --- @type fun(s: string, ...: any): nil
+local unpack <const> = table.unpack
+local yield <const> = coroutine.yield
+
+-- Get the document parameters
+local frame_rate <const> = document.getargument("frame-rate") --- @type number
+local height <const> = document.getargument("height") --- @type number
+local width <const> = document.getargument("width") --- @type number
+
+-- Setup the page
+ctx.savebox("background", "background",
+    ctx.delayed.externalfigure(
+        { "../../storyboard/pictures/canada-day-5370627_1280.jpg" },
+        { width=bp(width), height=bp(height) }
+    )
+)
+ctx.defineoverlay({ "background" }, { [[\foundbox{background}{background}]] })
+
+ctx.setupMPpage {
+    width=bp(width),
+    height=bp(height),
+    background="background",
+}
+
+local function page(func)
+    ctx.startMPpage()
+        func()
+        -- Align everything properly
+        mp [[
+            setbounds currentpicture to unitsquare
+                xyscaled (width, height)
+                shifted (-width/2, -height/2)
+            ;
+        ]]
+    ctx.stopMPpage()
+end
+
+-- Load the icons
+local icons <const> = {
+    [1] = "duck",
+    [2] = "bear",
+    [3] = "goose",
+}
+for page, name in pairs(icons) do
+    ctx.savebox("icons", name,
+        ctx.delayed.externalfigure(
+            { "icons.pdf" },
+            { page=page, scale=1000/2 }
+        )
+    )
+end
+
+-- Set up MetaPost
+ctx.startMPinitializations()
+    -- Define the icons
+    for _, icon in ipairs(icons) do
+        mp(string.format([[
+            picture %s ;
+            %s := image(
+                draw textext("\foundbox{icons}{%s}") ;
+            ) ;
+        ]], icon, icon, icon))
+    end
+    mp("numeric width ; width := %0.5f ;", width)
+    mp("numeric height ; height := %0.5f ;", height)
+ctx.stopMPinitializations()
+
+
+-------------------------
+--- Animation Helpers ---
+-------------------------
+
+--- Gets a random float in a range
+--- @param min number Minimum value
+--- @param max number Maximum value
+--- @return number - A random float between min and max
+local function random_float(min, max)
+    return min + math.random() * (max - min)
+end
+
+--- Zips multiple iterators together
+--- @param ... fun():number iterators to zip
+--- @return fun():number ... An iterator that yields tuples of values from the input iterators
+local function zip(...)
+    local iterators = { ... }
+    return coroutine.wrap(function()
+        while true do
+            local results = {}
+            for i, iterator in ipairs(iterators) do
+                local value = iterator()
+                if value == nil then
+                    return
+                end
+                results[i] = value
+            end
+            yield(unpack(results))
+        end
+    end)
+end
+
+--- Chains multiple iterators together
+--- @param ... fun():number iterators to chain
+--- @return fun():number ... An iterator that yields values from the input iterators in sequence
+local function chain(...)
+    local iterators = { ... }
+    return coroutine.wrap(function()
+        for _, iterator in ipairs(iterators) do
+            while true do
+                local values = { iterator() }
+                if values[1] == nil then
+                    break
+                end
+                yield(unpack(values))
+            end
+        end
+    end)
+end
+
+--- A no-op iterator that yields a constant indefinitely
+--- @return fun(): number - An iterator that yields a constant value
+local function constant(value)
+    return coroutine.wrap(function()
+        while true do
+            yield(value)
+        end
+    end)
+end
+
+--- Iterator that animates a value
+--- @param duration number The duration in seconds
+--- @param animation fun(time_ratio: number): number The animation function
+--- @return fun(): number - An iterator that yields the animated values
+local function animate(duration, animation)
+    return coroutine.wrap(function()
+        local total_frames = duration * frame_rate
+        for frame = 0, total_frames - 1 do
+            local time_ratio = frame / (total_frames - 1)
+            yield(animation(time_ratio))
+        end
+    end)
+end
+
+-- Easing functions
+--- @type { [string]: fun(time_ratio: number): number }
+local ease_functions = {}
+
+--- Linear easing
+function ease_functions.linear(time_ratio)
+    return time_ratio
+end
+
+--- Cosine easing
+function ease_functions.cosine(time_ratio)
+    return (1 - math.cos(math.pi * time_ratio)) / 2
+end
+
+--- Approximation of the default CSS "ease" function
+function ease_functions.css(time_ratio)
+    if time_ratio < 0.209974 then
+        return 0.292549*time_ratio + 7.43522*time_ratio^2 - 7.69039*time_ratio^3
+    else
+        return 3.08066 - 0.823602*time_ratio - 1.92432/(0.530732 + time_ratio)
+    end
+end
+
+--- Inverse of the CSS "ease" function
+function ease_functions.inv_css(time_ratio)
+    return 1 - ease_functions.css(1 - time_ratio)
+end
+
+--- Animation function that eases between two values
+--- @param start_value number The starting value
+--- @param end_value number The ending value
+--- @param ease string The easing function to use
+--- @return fun(time_ratio: number): number - The animation function
+local function range(start_value, end_value, ease)
+    local ease_function = ease_functions[ease]
+    if not ease_function then
+        error("Unknown easing function: " .. ease)
+    end
+
+    local relative_end_value = end_value - start_value
+    return function(time_ratio)
+        local delta = relative_end_value * ease_function(time_ratio)
+        return start_value + delta
+    end
+end
+
+
+---------------------
+--- Document Body ---
+---------------------
+
+-- Start the document
+ctx.starttext()
+
+-- Draw a V of geese
+local draw_geese_v do
+    -- Initialize variables
+    local frame = 0
+    local randoms = {}
+    local start_y <const> = 0.25*height
+
+    draw_geese_v = coroutine.wrap(function()
+        for start_x in animate(19.5, range(0.65*width, -0.65*width, "linear")) do
+            -- Randomize the goose positions, but don't change it too often or
+            -- else it looks too jittery
+            if frame % 10 == 0 then
+                randoms = {}
+                for i = 0, 10 do
+                    randoms[i] = {
+                        x = random_float(-0.0025 * width , 0.0025 * width ),
+                        y = random_float(-0.0025 * height, 0.0025 * height),
+                        rotate = random_float(-10, 10),
+                    }
+                end
+            end
+
+            -- Draw each individual goose
+            for i = 0, 10 do
+                local x_offset = start_x + 0.05 * abs(i - 5) * width  + randoms[i].x
+                local y_offset = start_y + 0.04 *    (i - 5) * height + randoms[i].y
+                local rotate = randoms[i].rotate
+                mp([[
+                    draw goose
+                        rotated %0.5f
+                        scaled 0.25
+                        shifted (-0.1width + %0.5f, %0.5f)
+                    ;
+                ]], rotate, x_offset, y_offset)
+            end
+            frame = frame + 1
+            yield()
+        end
+
+        -- Just do nothing after we're finished
+        while true do
+            yield()
+        end
+    end)
+end
+
+-- Have all the bears enter the scene from the bottom
+local start_pos = -0.70 * height
+local end_pos   = -0.25 * height
+
+for y_1, y_2, y_3, y_4, y_5 in zip(
+    chain(
+        animate(1.0, range(start_pos, end_pos, "css")),
+        animate(2.0, constant(end_pos))
+    ),
+    chain(
+        animate(0.5, constant(start_pos)),
+        animate(1.0, range(start_pos, end_pos, "css")),
+        animate(1.5, constant(end_pos))
+    ),
+    chain(
+        animate(1.0, constant(start_pos)),
+        animate(1.0, range(start_pos, end_pos, "css")),
+        animate(1.0, constant(end_pos))
+    ),
+    chain(
+        animate(1.5, constant(start_pos)),
+        animate(1.0, range(start_pos, end_pos, "css")),
+        animate(0.5, constant(end_pos))
+    ),
+    chain(
+        animate(2.0, constant(start_pos)),
+        animate(1.0, range(start_pos, end_pos, "css"))
+    )
+) do
+    page(function()
+        draw_geese_v()
+        mp("draw bear shifted ( 0.4width, %0.5f) ;", y_1)
+        mp("draw bear shifted ( 0.2width, %0.5f) ;", y_2)
+        mp("draw bear shifted ( 0.0width, %0.5f) ;", y_3)
+        mp("draw bear shifted (-0.2width, %0.5f) ;", y_4)
+        mp("draw bear shifted (-0.4width, %0.5f) ;", y_5)
+    end)
+end
+
+-- Have the outer bears spread out as the middle bear grows
+for x_1, x_2, scale_3, y_3, x_4, x_5 in zip(
+    chain(
+        animate(0.5, range( 0.40*width,  0.45*width, "cosine")),
+        animate(1.5, constant(0.45*width))
+    ),
+    chain(
+        animate(0.5, range( 0.20*width,  0.30*width, "cosine")),
+        animate(1.5, constant(0.30*width))
+    ),
+    chain(
+        animate(2.0, range(1, 2, "inv_css"))
+    ),
+    chain(
+        animate(2.0, range(-0.25*height, 0, "inv_css"))
+    ),
+    chain(
+        animate(0.5, range(-0.20*width, -0.30*width, "cosine")),
+        animate(1.5, constant(-0.30*width))
+    ),
+    chain(
+        animate(0.5, range(-0.40*width, -0.45*width, "cosine")),
+        animate(1.5, constant(-0.45*width))
+    )
+) do
+    page(function()
+        draw_geese_v()
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_1)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_2)
+        mp("draw bear scaled %0.5f shifted (0, %0.5f) ;", scale_3, y_3)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_4)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_5)
+    end)
+end
+
+-- Spin the middle bear around while keeping the others in place
+for rotate_3 in animate(5, range(0, 360, "cosine")) do
+    page(function()
+        draw_geese_v()
+        mp "draw bear shifted ( 0.45width, -0.25height) ;"
+        mp "draw bear shifted ( 0.30width, -0.25height) ;"
+        mp("draw bear scaled 2 rotated %0.5f ;", rotate_3)
+        mp "draw bear shifted (-0.30width, -0.25height) ;"
+        mp "draw bear shifted (-0.45width, -0.25height) ;"
+    end)
+end
+
+-- Have everyone return back to their starting positions
+for x_1, x_2, scale_3, y_3, x_4, x_5 in zip(
+    chain(
+        animate(1.5, constant(0.45*width)),
+        animate(0.5, range( 0.45*width,  0.40*width, "cosine"))
+    ),
+    chain(
+        animate(1.5, constant(0.30*width)),
+        animate(0.5, range( 0.30*width,  0.20*width, "cosine"))
+    ),
+    chain(
+        animate(2.0, range(2, 1, "css"))
+    ),
+    chain(
+        animate(2.0, range(0, -0.25*height, "css"))
+    ),
+    chain(
+        animate(1.5, constant(-0.30*width)),
+        animate(0.5, range(-0.30*width, -0.20*width, "cosine"))
+    ),
+    chain(
+        animate(1.5, constant(-0.45*width)),
+        animate(0.5, range(-0.45*width, -0.40*width, "cosine"))
+    )
+) do
+    page(function()
+        draw_geese_v()
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_1)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_2)
+        mp("draw bear scaled %0.5f shifted (0, %0.5f) ;", scale_3, y_3)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_4)
+        mp("draw bear shifted ( %0.5f, -0.25height) ;", x_5)
+    end)
+end
+
+-- Dance party!
+local function random_range(initial, min_value, max_value)
+    local start_value = initial
+    local end_value
+    return coroutine.wrap(function()
+        for _ = 1, 8 do
+            -- Move to a random value
+            end_value = random_float(min_value, max_value)
+            for value in chain(
+                animate(0.1, constant(start_value)),
+                animate(0.5, range(start_value, end_value, "css")),
+                animate(0.1, constant(end_value))
+            ) do
+                yield(value)
+            end
+            start_value = end_value
+        end
+
+        -- Return to the initial value
+        for value in animate(0.5, range(start_value, initial, "css")) do
+            yield(value)
+        end
+    end)
+end
+
+for rotate_1, y_1, scale_1,
+    rotate_2, y_2, scale_2,
+    rotate_3, y_3, scale_3,
+    rotate_4, y_4, scale_4,
+    rotate_5, y_5, scale_5 in zip(
+    (function()
+        local t = {}
+        for _ = 1, 5 do
+            insert(t, random_range(0, -50, 50))
+            insert(t, random_range(-0.25*height, -0.30*height, 0.40*height))
+            insert(t, random_range(1.00, 0.75, 1.33))
+        end
+        return unpack(t)
+    end)()
+) do
+    page(function()
+        draw_geese_v()
+        mp(
+            "draw bear scaled %0.5f rotated %0.5f shifted ( 0.40width, %0.5f) ;",
+            scale_1, rotate_1, y_1
+        )
+        mp(
+            "draw bear scaled %0.5f rotated %0.5f shifted ( 0.20width, %0.5f) ;",
+            scale_2, rotate_2, y_2
+        )
+        mp(
+            "draw bear scaled %0.5f rotated %0.5f shifted (0.0width, %0.5f) ;",
+            scale_3, rotate_3, y_3
+        )
+        mp(
+            "draw bear scaled %0.5f rotated %0.5f shifted (-0.20width, %0.5f) ;",
+            scale_4, rotate_4, y_4
+        )
+        mp(
+            "draw bear scaled %0.5f rotated %0.5f shifted (-0.40width, %0.5f) ;",
+            scale_5, rotate_5, y_5
+        )
+    end)
+end
+
+-- Time for everyone to shrink and fly away
+for scale, y in zip(
+    chain(
+        animate(1.6, range(1.0, 0.75, "inv_css")),
+        animate(0.5, range(0.75, 0.0, "linear"))
+    ),
+    animate(2.1, range(-0.25*height, 0.6*height, "inv_css"))
+) do
+    page(function()
+        draw_geese_v()
+        mp("draw bear scaled %0.5f shifted ( 0.40width, %0.5f) ;", scale, y)
+        mp("draw bear scaled %0.5f shifted ( 0.20width, %0.5f) ;", scale, y)
+        mp("draw bear scaled %0.5f shifted ( 0.00width, %0.5f) ;", scale, y)
+        mp("draw bear scaled %0.5f shifted (-0.20width, %0.5f) ;", scale, y)
+        mp("draw bear scaled %0.5f shifted (-0.40width, %0.5f) ;", scale, y)
+    end)
+end

@@ -1,0 +1,5 @@
+*.qdf
+*.dvi
+*.svg
+*.tuc
+!commercial.m4a
