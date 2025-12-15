@@ -12,18 +12,18 @@ convert2video(){
     # clean up old video
     rm $1.mp4
 
-    # convert to png images
+    # convert to images
     # convert -density 160 extravaganza-intermission-$1.pdf $1.png
-    pdftoppm -png -r 240 -progress extravaganza-intermission-$1.pdf $1
+    pdftoppm -r 240 -progress extravaganza-intermission-$1.pdf $1
 
     # convert to video
-    ffmpeg -r 10 -ss 00:00:00 -i $1-%02d.png -ss 00:00:00 -i christmas-music-box-music.m4a -shortest $1_raw.mp4
+    ffmpeg -r 10 -ss 00:00:00 -i $1-%02d.ppm -ss 00:00:00 -i christmas-music-box-music.m4a -shortest $1_raw.mp4
 
     # repair video
     HandBrakeCLI --crop 0:0:0:0 -i $1_raw.mp4 -o $1.mp4
 
     # clean up
-    rm $1-*.png
+    rm $1-*.ppm
     rm $1_raw.mp4
     rm extravaganza-intermission-$1.aux
     rm extravaganza-intermission-$1.log
@@ -49,17 +49,17 @@ repeatconvert(){
     # clean up old video
     rm $1.mp4
 
-    # convert to png images
-    pdftoppm -png -r 240 -progress extravaganza-intermission-$1.pdf $1
+    # convert to images
+    pdftoppm -r 240 -progress extravaganza-intermission-$1.pdf $1
 
     # convert to video
-    ffmpeg -r 10 -ss 00:00:00 -i $1-%03d.png -ss 00:00:00 -i christmas-music-box-music.m4a -shortest $1_raw.mp4
+    ffmpeg -r 10 -ss 00:00:00 -i $1-%03d.ppm -ss 00:00:00 -i christmas-music-box-music.m4a -shortest $1_raw.mp4
 
     # repair video
     HandBrakeCLI --crop 0:0:0:0 -i $1_raw.mp4 -o $1.mp4
 
     # clean up
-    rm $1-*.png
+    rm $1-*.ppm
     rm $1_raw.mp4
     rm extravaganza-intermission-$1.aux
     rm extravaganza-intermission-$1.log
