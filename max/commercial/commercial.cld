@@ -21,7 +21,7 @@ local width <const> = document.getargument("width") --- @type number
 -- Setup the page
 ctx.savebox("background", "background",
     ctx.delayed.externalfigure(
-        { "../../storyboard/pictures/canada-day-5370627_1280.jpg" },
+        { "background.jpg" },
         { width=bp(width), height=bp(height) }
     )
 )
@@ -56,7 +56,7 @@ for page, name in pairs(icons) do
     ctx.savebox("icons", name,
         ctx.delayed.externalfigure(
             { "icons.pdf" },
-            { page=page, scale=1000/2 }
+            { page=page, height=bp(0.4 * height) }
         )
     )
 end
