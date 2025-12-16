@@ -22,9 +22,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Read by Benedict Cumberbatch,
   0:00-???,
   https://www.youtube.com/watch?v=0178jo7Mka0
-  
+
 - Image: https://commons.wikimedia.org/wiki/File:Shakespeare's_Globe_(39593782581).jpg
-  
+
 - Source Code: [./samcarter/globe/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/globe/)
 
 ## Silent Beach
@@ -35,9 +35,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Myer Levin Advanced Steel Band,
   0:08-0.28,
   https://www.youtube.com/watch?v=IaeVqF05nTg
-  
+
 - Image: www.freepik.com
-  
+
 - Source Code: [./ulrike/silentnight/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/silentnight/)
 
 ## Stormy Weather
@@ -48,9 +48,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Richard Wagner,
   0:23 - 0:43,
   https://www.youtube.com/watch?v=p_MDQzyVFew
-  
+
 - Image: https://pixabay.com/de/photos/meer-wellen-sturm-himmel-wolken-6975501/
-  
+
 - Source Code: [./carlatex/StormyWeather/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/StormyWeather/)
 
 ## Lumberjack
@@ -61,23 +61,10 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Monty Python,
   0:24 - 0:43,
   https://www.youtube.com/watch?v=FshU58nI0Ts
-  
+
 - Image: https://pixabay.com/de/photos/mammutbaum-bäume-stämme-baumstämme-5978487/
-  
+
 - Source Code: [./carlatex/Lumberjack/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/Lumberjack/)
-
-## Commercial Break
-
-<img align="right" src="./max/commercial/commercial.png" height="100">
-
-- Music: O Canada - Canadian National Anthem ,
-  Beautiful Choir with Piano,
-  0:20-0:40,
-  https://www.youtube.com/watch?v=XfBLfHV8sdQ
-  
-- Image: https://pixabay.com/de/photos/kanada-tag-calgary-alberta-kanada-5370627/
-  
-- Source Code: [./max/commercial/](https://github.com/TikZlings/Extravaganza2025/tree/main/max/commercial/)
 
 ## A Mirage
 
@@ -87,10 +74,23 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Gene Kelly,
   0:22-0:40,
   https://www.youtube.com/watch?v=gAI6hhsDNxc
-  
+
 - Image: https://pixabay.com/de/photos/wüste-sand-düne-sonnenuntergang-9019840
-  
+
 - Source Code: [./carlatex/mirage/](https://github.com/TikZlings/Extravaganza2025/tree/main/carlatex/mirage/)
+
+## Commercial Break
+
+<img align="right" src="./max/commercial/commercial.png" height="100">
+
+- Music: O Canada - Canadian National Anthem ,
+  Beautiful Choir with Piano,
+  0:20-0:40,
+  https://www.youtube.com/watch?v=XfBLfHV8sdQ
+
+- Image: https://pixabay.com/de/photos/kanada-tag-calgary-alberta-kanada-5370627/
+
+- Source Code: [./max/commercial/](https://github.com/TikZlings/Extravaganza2025/tree/main/max/commercial/)
 
 ## A Nature Lover
 
@@ -100,9 +100,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Pete Seeger,
   0:08-0:26,
   https://www.youtube.com/watch?v=JANHG_OYbso
-  
+
 - Image: https://www.freepik.com/free-ai-image/beautiful-spring-landscape-with-blooming-flowers_403402532.htm
-  
+
 - Source Code: [./paulo/flower-field/](https://github.com/TikZlings/Extravaganza2025/tree/main/paulo/flower-field/)
 
 ## Happy Christmas
@@ -124,9 +124,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Eurythmics,
   0:50-1:10,
   https://www.youtube.com/watch?v=IRr_CfNbBpA
-  
+
 - Image: https://pxhere.com/en/photo/1257616
-  
+
 - Source Code: [./samcarter/cheese/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/cheese/)
 
 ## En vacançes
@@ -137,9 +137,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   adapted by Adolphe Adam,
   0:05-...,
   https://www.youtube.com/watch?v=uJKfxtYAt0s
-  
+
 - Image: https://commons.wikimedia.org/wiki/File:Pont_d`Avignon_阿微儂橋_-_panoramio.jpg
-  
+
 - Source Code: [./samcarter/Avignon/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/Avignon/)
 
 ## Commercial Break
@@ -150,9 +150,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Pierre Attaingnant,
   0:40-???,
   https://www.youtube.com/watch?v=UF1MwE7Knfs
-  
+
 - Image: https://commons.wikimedia.org/wiki/File:Firenze_aka_Florence,_Italy_(42195612411).jpg
-  
+
 - Source Code: [./samcarter/dante/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dante/)
 
 ## Dinner
@@ -163,9 +163,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Frank Sinatra,
   1:45-2:10,
   https://www.youtube.com/watch?v=qQzdAsjWGPg
-  
+
 - Image: https://commons.wikimedia.org/wiki/File:L'habitat_des_fourmis_au_parc_national_de_la_bénoué_au_Cameroun_23.jpg
-  
+
 - Source Code: [./samcarter/dinner/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/dinner/)
 
 ## TikZlings Abbey
@@ -176,9 +176,9 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   John Lunn,
   0:00-???,
   https://www.youtube.com/watch?v=j3_E9qVmrV0
-  
+
 - Image: https://commons.wikimedia.org/wiki/File:Highclere_Castle_-_Through_the_Trees_-_panoramio.jpg
-  
+
 - Source Code: [./samcarter/TikZlingsAbbey/](https://github.com/TikZlings/Extravaganza2025/tree/main/samcarter/TikZlingsAbbey/)
 
 ## Hockey
@@ -188,7 +188,7 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 - Music: Schneewalzer,
   0:05 - 0:025,
   https://www.youtube.com/watch?v=r4ugf3FTCj4
-  
+
 - Source Code: [./ulrike/nhl/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/nhl/)
 
 ## Birds and Bears
@@ -198,7 +198,7 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 - Music: The Birds children singing,
   1:17 - ??,
   https://www.youtube.com/watch?v=JOGC3sNJJxs
-  
+
 - Source Code: [./ulrike/birds/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/birds/)
 
 ## Grand Finale
@@ -209,5 +209,5 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
   Miguel Rios,
   0:45 - 1:05,
   https://www.youtube.com/watch?v=D2MqD3FEjcs
-  
+
 - Source Code: [./ulrike/finale/](https://github.com/TikZlings/Extravaganza2025/tree/main/ulrike/finale/)
