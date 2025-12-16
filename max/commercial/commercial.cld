@@ -33,9 +33,24 @@ ctx.setupMPpage {
     background="background",
 }
 
+ctx.setupbodyfont { "plex", "sans", bp(height / 20) }
+
+-- Function used to draw each page
+local every_page <const> = {  --- @type { before: (fun():nil)[], after: (fun():nil)[] }
+    before = {},
+    after = {},
+}
+
 local function page(func)
     ctx.startMPpage()
+        -- Draw the before functions
+        for _, before_func in ipairs(every_page.before) do
+            before_func()
+        end
+
+        -- Draw the page's content
         func()
+
         -- Align everything properly
         mp [[
             setbounds currentpicture to unitsquare
@@ -43,6 +58,11 @@ local function page(func)
                 shifted (-width/2, -height/2)
             ;
         ]]
+
+        -- Draw the after functions
+        for _, after_func in ipairs(every_page.after) do
+            after_func()
+        end
     ctx.stopMPpage()
 end
 
@@ -72,8 +92,21 @@ ctx.startMPinitializations()
             ) ;
         ]], icon, icon, icon))
     end
+
+    -- Define the width and height variables
     mp("numeric width ; width := %0.5f ;", width)
     mp("numeric height ; height := %0.5f ;", height)
+
+    -- Define the footer
+    mp [[
+        picture footer ; footer := image(
+            draw textext.top("\color[white]{
+                \bfxx
+                Image source:
+                \type{https://pixabay.com/de/photos/kanada-tag-calgary-alberta-kanada-5370627/}
+            }") shifted (0, -0.49height) ;
+        ) ;
+    ]]
 ctx.stopMPinitializations()
 
 
@@ -213,7 +246,7 @@ local draw_geese_v do
     local start_y <const> = 0.25*height
 
     draw_geese_v = coroutine.wrap(function()
-        for start_x in animate(19.5, range(0.65*width, -0.65*width, "linear")) do
+        for start_x in animate(20.0, range(0.65*width, -0.65*width, "linear")) do
             -- Randomize the goose positions, but don't change it too often or
             -- else it looks too jittery
             if frame % 10 == 0 then
@@ -235,7 +268,7 @@ local draw_geese_v do
                 mp([[
                     draw goose
                         rotated %0.5f
-                        scaled 0.25
+                        scaled 0.20
                         shifted (-0.1width + %0.5f, %0.5f)
                     ;
                 ]], rotate, x_offset, y_offset)
@@ -250,6 +283,27 @@ local draw_geese_v do
         end
     end)
 end
+insert(every_page.before, draw_geese_v)
+
+-- Draw the footer
+local draw_footer = coroutine.wrap(function()
+    for opacity in chain(
+        animate( 0.5, constant(0.0)),
+        animate( 1.0, range(0.0, 1.0, "linear")),
+        animate(17.0, constant(1.0)),
+        animate( 1.0, range(1.0, 0.0, "linear")),
+        animate( 0.5, constant(0.0))
+    ) do
+        mp("draw footer withtransparency (1, %0.5f) ;", opacity)
+        yield()
+    end
+
+    -- Just do nothing after we're finished
+    while true do
+        yield()
+    end
+end)
+insert(every_page.before, draw_footer)
 
 -- Have all the bears enter the scene from the bottom
 local start_pos = -0.70 * height
@@ -281,7 +335,6 @@ for y_1, y_2, y_3, y_4, y_5 in zip(
     )
 ) do
     page(function()
-        draw_geese_v()
         mp("draw bear shifted ( 0.4width, %0.5f) ;", y_1)
         mp("draw bear shifted ( 0.2width, %0.5f) ;", y_2)
         mp("draw bear shifted ( 0.0width, %0.5f) ;", y_3)
@@ -316,7 +369,6 @@ for x_1, x_2, scale_3, y_3, x_4, x_5 in zip(
     )
 ) do
     page(function()
-        draw_geese_v()
         mp("draw bear shifted ( %0.5f, -0.25height) ;", x_1)
         mp("draw bear shifted ( %0.5f, -0.25height) ;", x_2)
         mp("draw bear scaled %0.5f shifted (0, %0.5f) ;", scale_3, y_3)
@@ -328,7 +380,6 @@ end
 -- Spin the middle bear around while keeping the others in place
 for rotate_3 in animate(5, range(0, 360, "cosine")) do
     page(function()
-        draw_geese_v()
         mp "draw bear shifted ( 0.45width, -0.25height) ;"
         mp "draw bear shifted ( 0.30width, -0.25height) ;"
         mp("draw bear scaled 2 rotated %0.5f ;", rotate_3)
@@ -363,7 +414,6 @@ for x_1, x_2, scale_3, y_3, x_4, x_5 in zip(
     )
 ) do
     page(function()
-        draw_geese_v()
         mp("draw bear shifted ( %0.5f, -0.25height) ;", x_1)
         mp("draw bear shifted ( %0.5f, -0.25height) ;", x_2)
         mp("draw bear scaled %0.5f shifted (0, %0.5f) ;", scale_3, y_3)
@@ -413,7 +463,6 @@ for rotate_1, y_1, scale_1,
     end)()
 ) do
     page(function()
-        draw_geese_v()
         mp(
             "draw bear scaled %0.5f rotated %0.5f shifted ( 0.40width, %0.5f) ;",
             scale_1, rotate_1, y_1
@@ -446,7 +495,6 @@ for scale, y in zip(
     animate(2.1, range(-0.25*height, 0.6*height, "inv_css"))
 ) do
     page(function()
-        draw_geese_v()
         mp("draw bear scaled %0.5f shifted ( 0.40width, %0.5f) ;", scale, y)
         mp("draw bear scaled %0.5f shifted ( 0.20width, %0.5f) ;", scale, y)
         mp("draw bear scaled %0.5f shifted ( 0.00width, %0.5f) ;", scale, y)
