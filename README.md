@@ -10,7 +10,7 @@ The full video is available from ...
 
 To shorten the waiting time until the next Extravaganza, we created the exclusive "The Great TikZlings Calendar 2026". It has all important dates from the TeX-World and the Tikzling universe. Stay up to date!
 
-<a href="https://raw.githubusercontent.com/TikZlings/Extravaganza2025/main/calendar/extravaganza_calendar.pdf"><img src="./calendar/extravaganza_calendar-preview.png" alt="The Great TikZlings Calendar 2026" height="400"></a>
+<a href="https://github.com/TikZlings/Extravaganza2025/blob/main/calendar/extravaganza_calendar.pdf"><img src="./calendar/extravaganza_calendar-preview.png" alt="The Great TikZlings Calendar 2026" height="400"></a>
 
 (The design was modified from LianTze Lim's fantastic calendar template  https://tex.my/category/calendar/ which made creating this calendar really easy.)
 
