@@ -84,7 +84,7 @@ To shorten the waiting time until the next Extravaganza, we created the exclusiv
 <img align="right" src="./max/commercial/commercial.png" height="100">
 
 - Music: O Canada - Canadian National Anthem ,
-  Beautiful Choir with Piano,
+  Calixa Lavallée,
   0:20-0:40,
   https://www.youtube.com/watch?v=XfBLfHV8sdQ
 
