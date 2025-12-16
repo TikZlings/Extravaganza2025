@@ -377,7 +377,7 @@ local function random_range(initial, min_value, max_value)
     local start_value = initial
     local end_value
     return coroutine.wrap(function()
-        for _ = 1, 8 do
+        for _ = 1, 9 do
             -- Move to a random value
             end_value = random_float(min_value, max_value)
             for value in chain(
