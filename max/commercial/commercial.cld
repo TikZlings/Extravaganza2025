@@ -279,7 +279,7 @@ local draw_geese_v do
     local start_y <const> = 0.20*height
 
     draw_geese_v = coroutine.wrap(function()
-        for start_x in animate(20.0, range(0.65*width, -0.65*width, "linear")) do
+        for start_x in animate(20.2, range(0.65*width, -0.65*width, "linear")) do
             -- Randomize the goose positions, but don't change it too often or
             -- else it looks too jittery
             if frame % 10 == 0 then
