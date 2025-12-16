@@ -29,7 +29,7 @@
     \definecolor{bill}{HTML}{30384f}
     \definecolor{eye}{HTML}{F0F0F0}
     \definecolor{neck}{HTML}{a8a296}
-    \definecolor{feather}{HTML}{614125}
+    \definecolor{feather}{HTML}{704b2b}
     \definecolor{underneck}{HTML}{F0F0F0}
     \begin{tikzpicture}
         \duck[
@@ -43,19 +43,21 @@
 
         \begin{scope}
             \clip \duckpathjacket ;
-            \foreach \x in {0.1, 0.2, ..., 2.2}
-                \foreach \y in {0.2, 0.4, ..., 1.5}
-                    \draw[feather, line width=0.5pt] (\x, \y) [
+            \foreach \x in {0.1, 0.4, ..., 2.2}
+                \foreach \y in {0.2, 0.6, ..., 1.5}
+                    \draw[feather, line width=1pt] (\x, \y) [
                         start angle=135,
                         end angle=255,
-                        radius=0.05,
+                        x radius=0.20,
+                        y radius=0.10,
                     ] arc ;
-            \foreach \x in {0.15, 0.25, ..., 2.2}
-                \foreach \y in {0.3, 0.5, ..., 1.5}
-                    \draw[feather, line width=0.5pt] (\x, \y) [
+            \foreach \x in {0.2, 0.5, ..., 2.2}
+                \foreach \y in {0.4, 0.8, ..., 1.5}
+                    \draw[feather, line width=1pt] (\x, \y) [
                         start angle=135,
                         end angle=255,
-                        radius=0.05,
+                        x radius=0.20,
+                        y radius=0.10,
                     ] arc ;
         \end{scope}
 

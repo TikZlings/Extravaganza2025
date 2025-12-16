@@ -19,6 +19,11 @@ local height <const> = document.getargument("height") --- @type number
 local width <const> = document.getargument("width") --- @type number
 
 -- Setup the page
+ctx.setupcolors {
+    state="start",
+    pagecolormodel="auto",
+}
+
 ctx.savebox("background", "background",
     ctx.delayed.externalfigure(
         { "background.jpg" },
@@ -31,9 +36,10 @@ ctx.setupMPpage {
     width=bp(width),
     height=bp(height),
     background="background",
+    pagestate="start",
 }
 
-ctx.setupbodyfont { "plex", "sans", bp(height / 20) }
+ctx.setupbodyfont { "plex", "sans", bp(height / 32) }
 
 -- Function used to draw each page
 local every_page <const> = {  --- @type { before: (fun():nil)[], after: (fun():nil)[] }
@@ -81,6 +87,26 @@ for page, name in pairs(icons) do
     )
 end
 
+-- Draw the banner
+ctx.definecolor({ "banner" }, {
+    s=1,
+    t=0.35,
+    a=16,
+})
+
+ctx.savebox("banner", "banner",
+    ctx.delayed.framed({
+        offset = bp(0.010 * height),
+        background = "color",
+        backgroundcolor = "banner",
+        width = "fit",
+        align = "middle",
+        corner = "round",
+        rulethickness = bp(0.0025 * height),
+    }, ctx.delayed.bold [[TUG'26\\July 2026, Calgary]]
+    )
+)
+
 -- Set up MetaPost
 ctx.startMPinitializations()
     -- Define the icons
@@ -101,10 +127,17 @@ ctx.startMPinitializations()
     mp [[
         picture footer ; footer := image(
             draw textext.top("\color[white]{
-                \bfxx
+                \bf
                 Image source:
                 \type{https://pixabay.com/de/photos/kanada-tag-calgary-alberta-kanada-5370627/}
             }") shifted (0, -0.49height) ;
+        ) ;
+    ]]
+
+    -- Define the banner
+    mp [[
+        picture banner ; banner := image(
+            draw textext.rt("\foundbox{banner}{banner}") ;
         ) ;
     ]]
 ctx.stopMPinitializations()
@@ -243,7 +276,7 @@ local draw_geese_v do
     -- Initialize variables
     local frame = 0
     local randoms = {}
-    local start_y <const> = 0.25*height
+    local start_y <const> = 0.20*height
 
     draw_geese_v = coroutine.wrap(function()
         for start_x in animate(20.0, range(0.65*width, -0.65*width, "linear")) do
@@ -259,6 +292,21 @@ local draw_geese_v do
                     }
                 end
             end
+
+            -- Draw the banner
+            mp([[
+                draw (%0.5f, %0.5f) -- (%0.5f, %0.5f)
+                    withpen pencircle scaled 0.0025height
+                ;
+            ]],
+                start_x + 0.15 * width, start_y + 0.20 * height,
+                start_x + 0.20 * width, start_y + 0.20 * height
+            )
+            mp([[
+                draw banner shifted (%0.5f, %0.5f) ;
+            ]],
+                start_x + 0.20 * width, start_y + 0.20 * height
+            )
 
             -- Draw each individual goose
             for i = 0, 10 do
@@ -489,10 +537,10 @@ end
 -- Time for everyone to shrink and fly away
 for scale, y in zip(
     chain(
-        animate(1.6, range(1.0, 0.75, "inv_css")),
-        animate(0.5, range(0.75, 0.0, "linear"))
+        animate(1.0, range(1.00, 0.75, "linear")),
+        animate(1.1, range(0.75, 0.00, "inv_css"))
     ),
-    animate(2.1, range(-0.25*height, 0.6*height, "inv_css"))
+    animate(2.1, range(-0.25*height, 0.53*height, "inv_css"))
 ) do
     page(function()
         mp("draw bear scaled %0.5f shifted ( 0.40width, %0.5f) ;", scale, y)
