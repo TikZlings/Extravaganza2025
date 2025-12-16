@@ -2,9 +2,9 @@
 
 This repository contains the souce code of the Great TikZlings Extravanganza 2025, brought to you by [Ulrike](https://github.com/u-fischer) & [Gert Fischer](https://github.com/g-fischer), [Carla Maggi](https://github.com/CarLaTeX), [Max Chernoff](https://github.com/gucci-on-fleek), [Paulo Cereda](https://github.com/cereda) and [samcarter](https://github.com/samcarter).
 
-The full video is available from ...
+The full video is available from https://vimeo.com/1147001506
 
-[![](./intermissions/icon_large.png)](...)
+[![](./intermissions/icon_large.png)](https://vimeo.com/1147001506)
 
 ## Calendar
 
