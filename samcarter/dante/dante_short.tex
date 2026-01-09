@@ -1,0 +1,16 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikz}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \foreach \x in {1,4,...,350}{
+      \node<+> at (current page.center) {\includegraphics[width=\paperwidth,page=\x]{dante}};
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}
